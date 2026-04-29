@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#C8201A">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Licata Ordini">
+<meta name="application-name" content="Licata Ordini">
+<meta name="description" content="Modulo ordini Licata FIP Chemicals">
+
+<!-- iOS Home Screen Icon -->
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAD20lEQVR42u3dwZHbMBAEQMbhl/OPxFmtI/BZdwSB3WFP+S/uuEsniQBxlcg/cqlA4BA4BA6BQ+AQOAQOgUPgEDhE4BA4BA6BQ+AQOASORfnz+1dk9f3nulqV9d1/UxAMneua2N0IJQFzXaO7a6gkaa4rpr7jVebNdYXVd6TK1Lmu1Aa39Zg61yYcR+rbUGXqXPtwHG/woR5T59qHo0mDy3tMnWsfjlYNLuwxda59OBo2uKTH1Ln24Wjb4M0eU+fah6N5gz/uMXWufThGNPiDHlPn2odjUIPf6jF1LjjgaIBjXIMf9pg61z4c434Y/vC1hspY1SEccDyJY+ItpU9ebrSMJTXCAcdjOIbejP7vKwbIuN8kHHDAAcdmHHPXOH39ojEybpYJBxxwwLETx+ils1+8bpiMO33CAQcccMABBxxwwAEHHHDAAcc7cEzfIhwpwDuHdw444IADDjjggAMOOOCAAw444IDDSjArweCAAw44muMo+1bsW4EDDjjgWIqj7LK3yx4OOLr42IkjdU3Q/ZbggONhHMt73Ibj7F2CVzxNcHmPe3B0uIvU+RMbHHBswbGwxw04+tyCbvsXuempCdUvb5NRbc9bqZZ5lYxqe1JTdc17ZFTbM96qcV4io9qeDlm98wYZ1fZc2WqfeBnV9kTqmpBsGdX2LPuak0gWu3F8q8calUgZu3F8XmUNTBKLYzg+qbLGJoPFYRxft1nzE3Ab4erZZgVl7pe1q+QcmuZX6J3DO4fPHD5z+Lbi24rfOfzOEYfDL6R+IV3QIBlvubfirqy7sisbJCN/PYeVYFaCrW+QjOQ1pFafW33+VINkZO5bsePNjrdnG9zwP50no/VeWbvs7bKHA46jf5K3fYDIk9HuyT6eCeaZYHDA0eA73ubvpXkyPKQWjt44PPvcs8/hgAMOOFbhiFlJm32nBg444IBjBI6kDRrZOP44dBgOOOCAAw444IADDjjggAMOOE7OBod3DjjggAMOOOCAAw444IADDjjggAOODjjKSrAhOH58kXDAAQccm3FU1nPgI3HcuUg44IADjv04auYu+5fguHmRcMDxJI4a+GSfN+C4f5FwwPEwjpr2NMF4HEsu8qXPIc3Gseoir1lvlUdK9JDa1/kw124clXu6gFMTXuHDXCdxVO6JRk5qivVhri44KvcUxTfIqLbnyvZvMF5GtT2RekSD2TKq7Vn2g35pTZ1rK44ash7fXGdwDLohaa4zOB6tMvWO2pFZrow2U++7nh3hGt1mTcjcua4SgUPgEDgEDoFD4BA4BA6BQ+AQgUPgEDgEDoFD4BA4ZHb+Atlme9+cc4MqAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAD20lEQVR42u3dwZHbMBAEQMbhl/OPxFmtI/BZdwSB3WFP+S/uuEsniQBxlcg/cqlA4BA4BA6BQ+AQOAQOgUPgEDhE4BA4BA6BQ+AQOASORfnz+1dk9f3nulqV9d1/UxAMneua2N0IJQFzXaO7a6gkaa4rpr7jVebNdYXVd6TK1Lmu1Aa39Zg61yYcR+rbUGXqXPtwHG/woR5T59qHo0mDy3tMnWsfjlYNLuwxda59OBo2uKTH1Ln24Wjb4M0eU+fah6N5gz/uMXWufThGNPiDHlPn2odjUIPf6jF1LjjgaIBjXIMf9pg61z4c434Y/vC1hspY1SEccDyJY+ItpU9ebrSMJTXCAcdjOIbejP7vKwbIuN8kHHDAAcdmHHPXOH39ojEybpYJBxxwwLETx+ils1+8bpiMO33CAQcccMABBxxwwAEHHHDAAcc7cEzfIhwpwDuHdw444IADDjjggAMOOOCAAw444IDDSjArweCAAw44muMo+1bsW4EDDjjgWIqj7LK3yx4OOLr42IkjdU3Q/ZbggONhHMt73Ibj7F2CVzxNcHmPe3B0uIvU+RMbHHBswbGwxw04+tyCbvsXuempCdUvb5NRbc9bqZZ5lYxqe1JTdc17ZFTbM96qcV4io9qeDlm98wYZ1fZc2WqfeBnV9kTqmpBsGdX2LPuak0gWu3F8q8calUgZu3F8XmUNTBKLYzg+qbLGJoPFYRxft1nzE3Ab4erZZgVl7pe1q+QcmuZX6J3DO4fPHD5z+Lbi24rfOfzOEYfDL6R+IV3QIBlvubfirqy7sisbJCN/PYeVYFaCrW+QjOQ1pFafW33+VINkZO5bsePNjrdnG9zwP50no/VeWbvs7bKHA46jf5K3fYDIk9HuyT6eCeaZYHDA0eA73ubvpXkyPKQWjt44PPvcs8/hgAMOOFbhiFlJm32nBg444IBjBI6kDRrZOP44dBgOOOCAAw444IADDjjggAMOOE7OBod3DjjggAMOOOCAAw444IADDjjggAOODjjKSrAhOH58kXDAAQccm3FU1nPgI3HcuUg44IADjv04auYu+5fguHmRcMDxJI4a+GSfN+C4f5FwwPEwjpr2NMF4HEsu8qXPIc3Gseoir1lvlUdK9JDa1/kw124clXu6gFMTXuHDXCdxVO6JRk5qivVhri44KvcUxTfIqLbnyvZvMF5GtT2RekSD2TKq7Vn2g35pTZ1rK44ash7fXGdwDLohaa4zOB6tMvWO2pFZrow2U++7nh3hGt1mTcjcua4SgUPgEDgEDoFD4BA4BA6BQ+AQgUPgEDgEDoFD4BA4ZHb+Atlme9+cc4MqAAAAAElFTkSuQmCC">
+
+<!-- Standard favicon -->
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAEgklEQVR42u3dMZbjNhAFQJzDke9/Et8KDhyuJVEkhO5G138bbSLgs2ZGEglgTJEHGSoQgAQgAUgAEgFIABKABCARgAQgAUgAEgFIABKABCARgKQVoH/+/mv/K+5/0ZCZHgXov8v21b+igPLMtDygG1VuqPgX1yznTAsDWljo8nLXXqfMMy0J6EeFLix31RXKP9NigDYUuqTc59emykzLANpc6MNyn1yVWjOtASiw03vNPpTXwdBoQudeuTcuRtGZpgaUqtOvmr0HrpWh0VDP9WZvaOtmaPTUc7HZb6k1NDTa6rnS7FfOehoanfV8bPY6sraGRnM975u9KKyzoUHPm2av8GpuCCCAMgEq2umrZj/aYmjQ86bZ97AYKgBo850WgMIAlb4p+OoV36hiCCCA0gCq/ljCqxd9RYohgABKA+iAB6Neve7/emIIIIDSADrj0cxXL/0nJoYAAggggAACCKBzFlx+HMPBeh72DBBAAAEEEEAAAQQQQAABBBBAADUAdNI2Jcf78BvIbyCAAAIIIIAAAggggAACCCCAAAIIoEBAnkj0RCJAAAEEEEAANQU0rUy1MhUggCIBTbtz2J0DIIAiAU07lNmhDCCAIgFNu7T20wMQQJkA/aLZnYCu//+0U/2PAC1vdhugr2CVNrS2OoAASgZobbMzNB/H0FzPzH9iYXJA04mFm29xnwdoOjM1s6ESgKZTm9MaqgJoOjc+p6FCgHIa+nVFY+eVOB5QNkMbKhr7r8fZgJIw2lbRCLkkxwOKNbSzohF4Yc4GFMJof0Uj/PKcDWgbo6iKxoxOB0A/ZRRbUTyg9+WeBGg5owwXLgugVxWfB6j0x9KVgOzSankGQABFb+9ydqL+aiT8U+U9kPdAPoX5FOZTmO+BfA+09WfxDEC+iQ77218dkHthwW8b6wJyN96HDs8DpQHkiURPJMa8D6gFyDPRufRYldF9VYZ1YdaFBX+CLQHIytSkeqyNb7o23u4cdufI8t3rNig3ANkfCCCAkgGyR6I9EhPpsUurbX4BAij0e9j9t+o+AvIgPUAAJQPktB6n9QAEUBAgJxY6sRAggIIAnbrYIPbuWyFDAAEEEEAAAdQR0MELLlsBCtveBSCAAAIIIIAAAggggAACCCCAALLNL0B+AwEEEEAAAQQQQAABBBBAAAEEEEAAAXTUcU8AHQDoyYABAggggAACqCmgecTK1M6AHg4YIICiAc36u3O0BfR8wAABlADQPPRA0LMBLRkwQADlADQr79LaENCqAQMEUBpAs+xO9d0ALRzwqPsztKFTZ2UABFA1QPOgU7ScFxYDaJ5yjp8TC8MAzSNOEr3Ye1s9M/+pzbGdXq++p56Z/9z42E6/ar+hnh2Acjb71cg7zDQ1oGzNfjvsDjPNDihJufcG3GGmNQDFNnt7tB1mWgZQSLkPx9lhpsUAbSt3yQg7zLQkoJ+Wu3BsHWZaGNDycpePqsNMywN6WPFPR9JhpkcBkkIBSAASgAQgAUgEIAFIABKARAASgAQgAUgEIAFIABKARACS5/kX0fWFVXJA4VMAAAAASUVORK5CYII=">
+<link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAEgklEQVR42u3dMZbjNhAFQJzDke9/Et8KDhyuJVEkhO5G138bbSLgs2ZGEglgTJEHGSoQgAQgAUgAEgFIABKABCARgAQgAUgAEgFIABKABCARgKQVoH/+/mv/K+5/0ZCZHgXov8v21b+igPLMtDygG1VuqPgX1yznTAsDWljo8nLXXqfMMy0J6EeFLix31RXKP9NigDYUuqTc59emykzLANpc6MNyn1yVWjOtASiw03vNPpTXwdBoQudeuTcuRtGZpgaUqtOvmr0HrpWh0VDP9WZvaOtmaPTUc7HZb6k1NDTa6rnS7FfOehoanfV8bPY6sraGRnM975u9KKyzoUHPm2av8GpuCCCAMgEq2umrZj/aYmjQ86bZ97AYKgBo850WgMIAlb4p+OoV36hiCCCA0gCq/ljCqxd9RYohgABKA+iAB6Neve7/emIIIIDSADrj0cxXL/0nJoYAAggggAACCKBzFlx+HMPBeh72DBBAAAEEEEAAAQQQQAABBBBAADUAdNI2Jcf78BvIbyCAAAIIIIAAAggggAACCCCAAAIIoEBAnkj0RCJAAAEEEEAANQU0rUy1MhUggCIBTbtz2J0DIIAiAU07lNmhDCCAIgFNu7T20wMQQJkA/aLZnYCu//+0U/2PAC1vdhugr2CVNrS2OoAASgZobbMzNB/H0FzPzH9iYXJA04mFm29xnwdoOjM1s6ESgKZTm9MaqgJoOjc+p6FCgHIa+nVFY+eVOB5QNkMbKhr7r8fZgJIw2lbRCLkkxwOKNbSzohF4Yc4GFMJof0Uj/PKcDWgbo6iKxoxOB0A/ZRRbUTyg9+WeBGg5owwXLgugVxWfB6j0x9KVgOzSankGQABFb+9ydqL+aiT8U+U9kPdAPoX5FOZTmO+BfA+09WfxDEC+iQ77218dkHthwW8b6wJyN96HDs8DpQHkiURPJMa8D6gFyDPRufRYldF9VYZ1YdaFBX+CLQHIytSkeqyNb7o23u4cdufI8t3rNig3ANkfCCCAkgGyR6I9EhPpsUurbX4BAij0e9j9t+o+AvIgPUAAJQPktB6n9QAEUBAgJxY6sRAggIIAnbrYIPbuWyFDAAEEEEAAAdQR0MELLlsBCtveBSCAAAIIIIAAAggggAACCCCAALLNL0B+AwEEEEAAAQQQQAABBBBAAAEEEEAAAXTUcU8AHQDoyYABAggggAACqCmgecTK1M6AHg4YIICiAc36u3O0BfR8wAABlADQPPRA0LMBLRkwQADlADQr79LaENCqAQMEUBpAs+xO9d0ALRzwqPsztKFTZ2UABFA1QPOgU7ScFxYDaJ5yjp8TC8MAzSNOEr3Ye1s9M/+pzbGdXq++p56Z/9z42E6/ar+hnh2Acjb71cg7zDQ1oGzNfjvsDjPNDihJufcG3GGmNQDFNnt7tB1mWgZQSLkPx9lhpsUAbSt3yQg7zLQkoJ+Wu3BsHWZaGNDycpePqsNMywN6WPFPR9JhpkcBkkIBSAASgAQgAUgEIAFIABKARAASgAQgAUgEIAFIABKARACS5/kX0fWFVXJA4VMAAAAASUVORK5CYII=">
+
+<!-- Web App Manifest inline -->
+
+<title>Licata Ordini – FIP Chemicals</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:-apple-system,'Helvetica Neue',Arial,sans-serif;background:#efefed;color:#111;font-size:14px;min-height:100vh}
+:root{--red:#C8201A;--dark:#111;--mid:#555;--light:#f7f7f5;--border:#d4d4d0;--wh:#fff;--r:8px}
+
+/* HEADER */
+.hdr{background:var(--wh);border-bottom:3px solid var(--red);padding:10px 14px;position:sticky;top:0;z-index:50;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:40px;height:40px;background:var(--red);border-radius:4px;display:flex;align-items:center;justify-content:center}
+.logo-mark svg{width:24px;height:24px;fill:white}
+.logo-name{font-size:21px;font-weight:900;font-style:italic;letter-spacing:-1px;color:var(--dark)}
+.logo-name em{color:var(--red);font-style:italic}
+.logo-sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#888;margin-top:-2px}
+.hdr-badge{background:var(--red);color:white;font-size:9px;font-weight:800;padding:2px 7px;letter-spacing:1px}
+.hdr-title{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#888;text-align:right}
+
+/* STEPS */
+.steps{display:flex;gap:4px;padding:8px 12px;background:var(--wh);border-bottom:1px solid var(--border)}
+.step{flex:1;height:3px;background:var(--border);border-radius:2px;transition:background .3s}
+.step.done{background:var(--red)}
+
+/* TABS */
+.tabs{display:flex;background:var(--wh);border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1;min-width:0;padding:11px 4px;text-align:center;font-size:9px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#999;border-bottom:3px solid transparent;white-space:nowrap;cursor:pointer;transition:all .15s}
+.tab.on{color:var(--red);border-bottom-color:var(--red)}
+.tab-icon{font-size:14px;display:block;margin-bottom:1px}
+
+/* SECTIONS */
+.sec{display:none;padding:12px 12px 24px}
+.sec.on{display:block}
+
+/* CARD */
+.card{background:var(--wh);border-radius:var(--r);border:1px solid var(--border);padding:14px;margin-bottom:12px}
+.card-hd{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--red);margin-bottom:12px;padding-bottom:7px;border-bottom:1px solid #f0f0ec;display:flex;justify-content:space-between;align-items:center}
+
+/* FIELDS */
+.row{display:flex;gap:8px;margin-bottom:10px}
+.f{flex:1;min-width:0}
+.f label{display:block;font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#777;margin-bottom:4px}
+.f input,.f select,.f textarea{width:100%;padding:9px 10px;border:1.5px solid var(--border);border-radius:5px;font-size:14px;font-family:inherit;color:var(--dark);background:var(--wh);-webkit-appearance:none;transition:border-color .15s}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 3px rgba(200,32,26,.1)}
+.f select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath fill='%23666' d='M5 6L0 0h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:26px}
+.f textarea{resize:vertical;min-height:56px}
+
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{display:flex;align-items:center;gap:5px;padding:5px 11px;border:1.5px solid var(--border);border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;user-select:none}
+.chip.on{border-color:var(--red);background:rgba(200,32,26,.07);color:var(--red)}
+.chip input{display:none}
+
+/* ARTICLE SEARCH */
+.srch-wrap{position:relative;margin-bottom:10px}
+.srch-wrap input{width:100%;padding:10px 36px 10px 12px;border:1.5px solid var(--border);border-radius:5px;font-size:14px;-webkit-appearance:none}
+.srch-wrap input:focus{outline:none;border-color:var(--red)}
+.srch-ico{position:absolute;right:11px;top:50%;transform:translateY(-50%);color:#aaa;pointer-events:none}
+
+.filters{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px;margin-bottom:10px}
+.filters::-webkit-scrollbar{display:none}
+.fb{flex:0 0 auto;padding:5px 12px;border:1.5px solid var(--border);border-radius:20px;font-size:10px;font-weight:700;color:#888;background:var(--wh);cursor:pointer;white-space:nowrap}
+.fb.on{background:var(--red);border-color:var(--red);color:white}
+
+.art-list{max-height:320px;overflow-y:auto;border:1px solid var(--border);border-radius:5px;-webkit-overflow-scrolling:touch}
+.art-item{display:flex;align-items:center;padding:8px 10px;border-bottom:1px solid #f0f0ec;cursor:pointer}
+.art-item:last-child{border-bottom:none}
+.art-item:active{background:#fef5f5}
+.art-info{flex:1;min-width:0}
+.art-code{font-size:9px;font-weight:800;color:var(--red);letter-spacing:.5px}
+.art-desc{font-size:11px;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.35}
+.art-grp{font-size:9px;color:#aaa;margin-top:1px}
+.art-price{font-size:12px;font-weight:800;color:#444;margin:0 8px;flex-shrink:0;text-align:right;line-height:1.2}
+.art-price span{display:block;font-size:9px;font-weight:400;color:#aaa}
+.art-add{width:28px;height:28px;background:var(--red);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:300;flex-shrink:0;line-height:1}
+.art-empty{text-align:center;padding:20px;color:#aaa;font-size:12px}
+
+/* ORDER LINES */
+.oline{background:#fafaf9;border:1px solid var(--border);border-radius:6px;padding:10px;margin-bottom:8px}
+.oline-hd{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+.oline-code{font-size:9px;font-weight:800;color:var(--red)}
+.oline-desc{font-size:11px;color:var(--dark);max-width:210px;line-height:1.35}
+.oline-rm{width:24px;height:24px;background:#ff3b30;color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0;cursor:pointer}
+.oline-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.mf label{display:block;font-size:8px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#888;margin-bottom:3px}
+.mf input{width:100%;padding:7px 8px;border:1.5px solid var(--border);border-radius:4px;font-size:13px;font-family:inherit;-webkit-appearance:none;text-align:right}
+.mf input:focus{outline:none;border-color:var(--red)}
+.oline-tot{text-align:right;font-size:11px;font-weight:700;color:#333;margin-top:5px}
+.no-lines{text-align:center;padding:20px;color:#aaa;font-size:12px;border:1.5px dashed var(--border);border-radius:6px}
+
+/* TOTAL BAR */
+.tot-bar{background:var(--dark);color:white;padding:12px 14px;border-radius:var(--r);display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.tot-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;opacity:.7}
+.tot-amt{font-size:22px;font-weight:900;color:#ff9999}
+
+/* BUTTONS */
+.btn-p{width:100%;padding:14px;background:var(--red);color:white;border:none;border-radius:var(--r);font-size:15px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;-webkit-appearance:none;letter-spacing:.3px;margin-bottom:10px}
+.btn-p:active{background:#a01510}
+.btn-o{width:100%;padding:12px;background:transparent;color:var(--red);border:2px solid var(--red);border-radius:var(--r);font-size:13px;font-weight:800;cursor:pointer;margin-bottom:10px;-webkit-appearance:none}
+.btn-o:active{background:rgba(200,32,26,.05)}
+.btn-s{width:100%;padding:12px;background:transparent;color:#555;border:2px solid #aaa;border-radius:var(--r);font-size:13px;font-weight:800;cursor:pointer;margin-bottom:10px;-webkit-appearance:none}
+.nav-row{display:flex;gap:8px;margin-bottom:4px}
+
+/* MODAL */
+.modal-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:flex-end}
+.modal-bg.on{display:flex}
+.modal{background:var(--wh);width:100%;max-height:88vh;border-radius:16px 16px 0 0;padding:14px 14px 24px;overflow-y:auto;-webkit-overflow-scrolling:touch;position:relative}
+.modal-handle{width:36px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 14px}
+.modal-close{position:absolute;right:14px;top:14px;font-size:22px;color:#aaa;cursor:pointer;line-height:1}
+
+/* PREVIEW */
+.prev-logo{font-size:16px;font-weight:900;font-style:italic;text-align:center;margin-bottom:2px}
+.prev-logo em{color:var(--red);font-style:inherit}
+.prev-sub{text-align:center;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#aaa;margin-bottom:14px}
+.prev-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.pf{border-bottom:1px solid var(--border);padding-bottom:3px}
+.pf-lbl{font-size:7px;text-transform:uppercase;letter-spacing:.8px;color:#aaa;font-weight:800}
+.pf-val{font-size:12px;font-weight:600;color:var(--dark)}
+.prev-table{width:100%;border-collapse:collapse;font-size:9px;margin-top:10px}
+.prev-table th{background:var(--dark);color:white;padding:5px 4px;text-align:left;font-size:7px;letter-spacing:.5px}
+.prev-table td{padding:5px 4px;border-bottom:1px solid #eee}
+.prev-total{text-align:right;font-size:14px;font-weight:900;margin-top:10px;padding-top:8px;border-top:2px solid var(--dark)}
+
+/* RUBRICA */
+.ana-item{display:flex;align-items:center;padding:11px 10px;border-bottom:1px solid #f0f0ec;cursor:pointer;gap:10px}
+.ana-item:last-child{border-bottom:none}
+.ana-item:active{background:#fef5f5}
+.ana-avatar{width:36px;height:36px;background:var(--red);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;font-weight:900;flex-shrink:0}
+.ana-info{flex:1;min-width:0}
+.ana-name{font-size:13px;font-weight:700;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ana-detail{font-size:10px;color:#888;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ana-actions{display:flex;gap:6px;flex-shrink:0}
+.btn-sm-red{padding:5px 11px;background:var(--red);color:white;border-radius:5px;font-size:10px;font-weight:800;cursor:pointer;border:none;white-space:nowrap}
+.btn-sm-del{padding:5px 9px;background:#ff3b30;color:white;border-radius:5px;font-size:10px;font-weight:800;cursor:pointer;border:none}
+.draft-item{display:flex;align-items:center;padding:11px 10px;border-bottom:1px solid #f0f0ec;gap:10px}
+.draft-item:last-child{border-bottom:none}
+.draft-icon{width:36px;height:36px;background:#3a3a3a;border-radius:6px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;flex-shrink:0}
+.draft-info{flex:1;min-width:0}
+.draft-name{font-size:12px;font-weight:700;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.draft-meta{font-size:10px;color:#888;margin-top:2px}
+.draft-actions{display:flex;gap:6px;flex-shrink:0}
+.badge{background:var(--red);color:white;border-radius:10px;font-size:9px;font-weight:800;padding:1px 6px;min-width:18px;text-align:center}
+.empty-st{text-align:center;padding:24px 12px;color:#bbb}
+.empty-st .ei{font-size:32px;margin-bottom:8px}
+.empty-st p{font-size:12px;line-height:1.6}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(60px);background:rgba(0,0,0,.85);color:white;padding:9px 18px;border-radius:20px;font-size:12px;font-weight:700;z-index:300;transition:transform .25s;white-space:nowrap;pointer-events:none}
+.toast.on{transform:translateX(-50%) translateY(0)}
+</style>
+
+<!-- iOS Splash Screen -->
+<meta name="apple-touch-startup-image" content="data:image/png;base64,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">
+
+<!-- Inject manifest as Blob for Android (data URI manifests have limitations) -->
+<script>
+(function(){
+  try {
+    var manifest = {
+      "name": "Licata Ordini",
+      "short_name": "Licata",
+      "description": "Modulo ordini Licata FIP Chemicals",
+      "start_url": ".",
+      "display": "standalone",
+      "background_color": "#C8201A",
+      "theme_color": "#C8201A",
+      "orientation": "portrait-primary",
+      "icons": [
+        {"src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAEgklEQVR42u3dMZbjNhAFQJzDke9/Et8KDhyuJVEkhO5G138bbSLgs2ZGEglgTJEHGSoQgAQgAUgAEgFIABKABCARgAQgAUgAEgFIABKABCARgKQVoH/+/mv/K+5/0ZCZHgXov8v21b+igPLMtDygG1VuqPgX1yznTAsDWljo8nLXXqfMMy0J6EeFLix31RXKP9NigDYUuqTc59emykzLANpc6MNyn1yVWjOtASiw03vNPpTXwdBoQudeuTcuRtGZpgaUqtOvmr0HrpWh0VDP9WZvaOtmaPTUc7HZb6k1NDTa6rnS7FfOehoanfV8bPY6sraGRnM975u9KKyzoUHPm2av8GpuCCCAMgEq2umrZj/aYmjQ86bZ97AYKgBo850WgMIAlb4p+OoV36hiCCCA0gCq/ljCqxd9RYohgABKA+iAB6Neve7/emIIIIDSADrj0cxXL/0nJoYAAggggAACCKBzFlx+HMPBeh72DBBAAAEEEEAAAQQQQAABBBBAADUAdNI2Jcf78BvIbyCAAAIIIIAAAggggAACCCCAAAIIoEBAnkj0RCJAAAEEEEAANQU0rUy1MhUggCIBTbtz2J0DIIAiAU07lNmhDCCAIgFNu7T20wMQQJkA/aLZnYCu//+0U/2PAC1vdhugr2CVNrS2OoAASgZobbMzNB/H0FzPzH9iYXJA04mFm29xnwdoOjM1s6ESgKZTm9MaqgJoOjc+p6FCgHIa+nVFY+eVOB5QNkMbKhr7r8fZgJIw2lbRCLkkxwOKNbSzohF4Yc4GFMJof0Uj/PKcDWgbo6iKxoxOB0A/ZRRbUTyg9+WeBGg5owwXLgugVxWfB6j0x9KVgOzSankGQABFb+9ydqL+aiT8U+U9kPdAPoX5FOZTmO+BfA+09WfxDEC+iQ77218dkHthwW8b6wJyN96HDs8DpQHkiURPJMa8D6gFyDPRufRYldF9VYZ1YdaFBX+CLQHIytSkeqyNb7o23u4cdufI8t3rNig3ANkfCCCAkgGyR6I9EhPpsUurbX4BAij0e9j9t+o+AvIgPUAAJQPktB6n9QAEUBAgJxY6sRAggIIAnbrYIPbuWyFDAAEEEEAAAdQR0MELLlsBCtveBSCAAAIIIIAAAggggAACCCCAALLNL0B+AwEEEEAAAQQQQAABBBBAAAEEEEAAAXTUcU8AHQDoyYABAggggAACqCmgecTK1M6AHg4YIICiAc36u3O0BfR8wAABlADQPPRA0LMBLRkwQADlADQr79LaENCqAQMEUBpAs+xO9d0ALRzwqPsztKFTZ2UABFA1QPOgU7ScFxYDaJ5yjp8TC8MAzSNOEr3Ye1s9M/+pzbGdXq++p56Z/9z42E6/ar+hnh2Acjb71cg7zDQ1oGzNfjvsDjPNDihJufcG3GGmNQDFNnt7tB1mWgZQSLkPx9lhpsUAbSt3yQg7zLQkoJ+Wu3BsHWZaGNDycpePqsNMywN6WPFPR9JhpkcBkkIBSAASgAQgAUgEIAFIABKARAASgAQgAUgEIAFIABKARACS5/kX0fWFVXJA4VMAAAAASUVORK5CYII=", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+        {"src": "data:image/png;base64,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", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+      ]
+    };
+    var blob = new Blob([JSON.stringify(manifest)], {type: 'application/manifest+json'});
+    var url = URL.createObjectURL(blob);
+    var link = document.createElement('link');
+    link.rel = 'manifest';
+    link.href = url;
+    document.head.appendChild(link);
+  } catch(e) {}
+})();
+</script>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-inner">
+    <div class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7L12 2zm0 2.5l6.5 3.6v7l-6.5 3.6L5.5 15.1v-7L12 4.5z"/></svg></div>
+      <div>
+        <div class="logo-name"><em>l</em>icata</div>
+        <div style="display:flex;align-items:center;gap:6px;margin-top:1px">
+          <div class="hdr-badge">FIP</div>
+          <div class="logo-sub">chemicals</div>
+        </div>
+      </div>
+    </div>
+    <div class="hdr-title">Modulo<br>Ordine</div>
+  </div>
+</div>
+
+<!-- STEP INDICATOR -->
+<div class="steps">
+  <div class="step done" id="s1"></div>
+  <div class="step" id="s2"></div>
+  <div class="step" id="s3"></div>
+  <div class="step" id="s4"></div>
+  <div class="step" id="s5"></div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab on" onclick="go('testata',0)"><span class="tab-icon">📋</span>Testata</div>
+  <div class="tab" onclick="go('dest',1)"><span class="tab-icon">📍</span>Dest.</div>
+  <div class="tab" onclick="go('art',2)"><span class="tab-icon">📦</span>Articoli</div>
+  <div class="tab" onclick="go('recap',3)"><span class="tab-icon">✅</span>Recap</div>
+  <div class="tab" onclick="go('rubrica',4)" id="tabRubrica"><span class="tab-icon">💾</span>Salvati<span class="badge" id="badgeTot" style="display:none;margin-left:3px">0</span></div>
+</div>
+
+<!-- ══════════ TESTATA ══════════ -->
+<div class="sec on" id="tab-testata">
+  <div class="card">
+    <div class="card-hd">Dati Ordine</div>
+    <div class="row">
+      <div class="f" style="flex:1.5"><label>Ordine N°</label><input id="ordNum" type="text" placeholder="2025-001"></div>
+      <div class="f"><label>Data</label><input id="ordDate" type="date"></div>
+    </div>
+    <div class="row">
+      <div class="f">
+        <label>Agente</label>
+        <select id="agente" onchange="handleAgente(this)">
+          <option value="">-- Seleziona --</option>
+          <option value="DANIELE SALOMONE">DANIELE SALOMONE</option>
+          <option value="ALTRO">ALTRO</option>
+        </select>
+      </div>
+    </div>
+    <div class="row" id="agenteAltroRow" style="display:none">
+      <div class="f"><label>Specifica agente</label><input id="agenteAltro" type="text" placeholder="Nome agente"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd">
+      Cliente
+      <button onclick="saveAna()" style="background:var(--red);color:white;border:none;border-radius:4px;padding:4px 10px;font-size:10px;font-weight:800;cursor:pointer">+ Salva cliente</button>
+    </div>
+    <div class="row">
+      <div class="f" style="flex:2"><label>Ragione Sociale</label><input id="cliente" type="text" placeholder="Nome cliente"></div>
+      <div class="f"><label>Cod. Cliente</label><input id="codCliente" type="text" placeholder="—"></div>
+    </div>
+    <div class="row">
+      <div class="f"><label>CIG</label><input id="cig" type="text" placeholder="—"></div>
+      <div class="f"><label>CUP</label><input id="cup" type="text" placeholder="—"></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd">Logistica</div>
+    <div style="font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#777;margin-bottom:6px">Opzioni consegna</div>
+    <div class="chips">
+      <label class="chip" id="ck-sponda"><input type="checkbox" onchange="ckT(this,'ck-sponda')">Sponda</label>
+      <label class="chip" id="ck-imb"><input type="checkbox" onchange="ckT(this,'ck-imb')">Imballaggio</label>
+      <label class="chip" id="ck-trasp"><input type="checkbox" onchange="ckT(this,'ck-trasp')">Trasporto</label>
+      <label class="chip" id="ck-ritira"><input type="checkbox" onchange="ckT(this,'ck-ritira')">Ritira Cliente</label>
+    </div>
+    <div style="font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:#777;margin:12px 0 6px">Origine Colore</div>
+    <div class="chips">
+      <label class="chip" id="ck-mazz"><input type="checkbox" onchange="ckT(this,'ck-mazz')">Mazzetta</label>
+      <label class="chip" id="ck-mazz2"><input type="checkbox" onchange="ckT(this,'ck-mazz2')">Mazzetta New 2.0</label>
+      <label class="chip" id="ck-cont"><input type="checkbox" onchange="ckT(this,'ck-cont')">Continuazione</label>
+      <label class="chip" id="ck-camp"><input type="checkbox" onchange="ckT(this,'ck-camp')">Campione</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-hd">Consegna & Note</div>
+    <div class="row"><div class="f"><label>Consegna dal</label><input id="consegna" type="date"></div></div>
+    <div class="f" style="margin-bottom:10px">
+      <label>Costo Trasporto (€)</label>
+      <input id="trasporto" type="text" inputmode="decimal" placeholder="Es. 120,00 — da confermare">
+    </div>
+    <div class="f" style="margin-bottom:10px">
+      <label>Note Trasporto</label>
+      <input id="noteTrasporto" type="text" placeholder="Es. bilico diretto, franco destino…">
+    </div>
+    <div class="f">
+      <label>Annotazioni</label>
+      <textarea id="note" placeholder="Note aggiuntive…"></textarea>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div style="background:#fff8e1;border:1px solid #f0c040;border-radius:8px;padding:12px 14px;margin-bottom:12px;display:flex;gap:10px;align-items:flex-start">
+    <span style="font-size:18px;flex-shrink:0;margin-top:1px">⚠️</span>
+    <div style="font-size:11px;color:#5a4000;line-height:1.6">
+      <strong>Nota importante:</strong> i prezzi indicati si riferiscono al listino in vigore e sono soggetti a variazioni. I costi di trasporto sono <strong>indicativi</strong> e devono essere <strong>confermati al momento dell'ordine</strong> in base a destinazione, quantità e modalità di consegna. Il presente documento non costituisce conferma d'ordine.
+    </div>
+  </div>
+
+  <button class="btn-p" onclick="go('dest',1)">Avanti: Destinazione →</button>
+</div>
+
+<!-- ══════════ DESTINAZIONE ══════════ -->
+<div class="sec" id="tab-dest">
+  <div class="card">
+    <div class="card-hd">Destinazione Merce</div>
+    <div class="f" style="margin-bottom:10px"><label>Destinazione</label><input id="dNome" type="text" placeholder="Ragione sociale / cantiere"></div>
+    <div class="f" style="margin-bottom:10px"><label>Via / Piazza / C.da</label><input id="dVia" type="text" placeholder="Indirizzo"></div>
+    <div class="row">
+      <div class="f" style="flex:.6"><label>CAP</label><input id="dCap" type="text" inputmode="numeric" maxlength="5" placeholder="00000"></div>
+      <div class="f"><label>Città</label><input id="dCitta" type="text" placeholder="Città"></div>
+      <div class="f" style="flex:.5"><label>Prov</label><input id="dProv" type="text" maxlength="2" placeholder="MI" style="text-transform:uppercase"></div>
+    </div>
+    <div class="f" style="margin-top:8px"><label>Ref. Cantiere / Recapito</label><input id="dRef" type="text" placeholder="Referente o telefono"></div>
+  </div>
+  <div class="card">
+    <div class="card-hd">Email Destinazione</div>
+    <div class="f"><label>Email</label><input id="emailDest" type="email" inputmode="email" placeholder="ordini@example.it"></div>
+  </div>
+  <div class="nav-row">
+    <button class="btn-o" style="margin-bottom:0" onclick="go('testata',0)">← Testata</button>
+    <button class="btn-p" style="flex:2;margin-bottom:0" onclick="go('art',2)">Articoli →</button>
+  </div>
+</div>
+
+<!-- ══════════ ARTICOLI ══════════ -->
+<div class="sec" id="tab-art">
+  <div class="card">
+    <div class="card-hd">Ricerca Listino</div>
+    <div class="srch-wrap">
+      <input id="srch" type="text" placeholder="Cerca codice, descrizione…" oninput="doFilter()" inputmode="search">
+      <span class="srch-ico">🔍</span>
+    </div>
+    <div class="filters">
+      <button class="fb on" onclick="setGrp('',this)">Tutti</button>
+      <button class="fb" onclick="setGrp('ISORAY 031',this)">ISORAY 031</button>
+      <button class="fb" onclick="setGrp('ISORAY 030',this)">ISORAY 030</button>
+      <button class="fb" onclick="setGrp('ECHORAY',this)">ECHORAY</button>
+      <button class="fb" onclick="setGrp('TATANKA 035',this)">TATANKA 035</button>
+      <button class="fb" onclick="setGrp('TATANKA CZ',this)">TATANKA CZ</button>
+      <button class="fb" onclick="setGrp('SINTORAY',this)">SINTORAY</button>
+      <button class="fb" onclick="setGrp('XPS',this)">XPS</button>
+      <button class="fb" onclick="setGrp('PIR',this)">PIR</button>
+      <button class="fb" onclick="setGrp('ARSANIT',this)">ARSANIT</button>
+      <button class="fb" onclick="setGrp('NEOSTIR',this)">NEOSTIR</button>
+      <button class="fb" onclick="setGrp('SIRAPOR',this)">SIRAPOR</button>
+      <button class="fb" onclick="setGrp('PORON',this)">PORON</button>
+      <button class="fb" onclick="setGrp('Lana Roccia',this)">Lana Roccia</button>
+      <button class="fb" onclick="setGrp('Fibra Legno',this)">Fibra Legno</button>
+      <button class="fb" onclick="setGrp('Fenolico',this)">Fenolico</button>
+      <button class="fb" onclick="setGrp('Lana Vetro',this)">Lana Vetro</button>
+      <button class="fb" onclick="setGrp('Tasselli',this)">Tasselli</button>
+      <button class="fb" onclick="setGrp('Profili',this)">Profili</button>
+      <button class="fb" onclick="setGrp('Paraspigoli',this)">Paraspigoli</button>
+      <button class="fb" onclick="setGrp('licata.coat',this)">licata.coat</button>
+      <button class="fb" onclick="setGrp('licata.paint',this)">licata.paint</button>
+      <button class="fb" onclick="setGrp('licata.finish',this)">licata.finish</button>
+      <button class="fb" onclick="setGrp('licata.floor',this)">licata.floor</button>
+      <button class="fb" onclick="setGrp('Impermeab.',this)">Impermeab.</button>
+      <button class="fb" onclick="setGrp('licata.repair',this)">licata.repair</button>
+      <button class="fb" onclick="setGrp('BetonFIP',this)">BetonFIP</button>
+      <button class="fb" onclick="setGrp('ResinFIP',this)">ResinFIP</button>
+      <button class="fb" onclick="setGrp('FiberFIP',this)">FiberFIP</button>
+      <button class="fb" onclick="setGrp('Reinforced',this)">Reinforced</button>
+      <button class="fb" onclick="setGrp('Naturalis',this)">Naturalis</button>
+      <button class="fb" onclick="setGrp('licata.cem',this)">licata.cem</button>
+      <button class="fb" onclick="setGrp('licata.colour',this)">Colour</button>
+    </div>
+    <div class="art-list" id="artList"></div>
+  </div>
+  <div class="card">
+    <div class="card-hd">Righe Ordine <span style="opacity:.5" id="lineCount">(0)</span></div>
+    <div id="linesCont"><div class="no-lines">Nessun articolo aggiunto.</div></div>
+  </div>
+  <div style="background:#fff8e1;border:1px solid #f0c040;border-radius:8px;padding:11px 13px;margin-bottom:12px;display:flex;gap:9px;align-items:flex-start">
+    <span style="font-size:16px;flex-shrink:0">⚠️</span>
+    <div style="font-size:10px;color:#5a4000;line-height:1.55"><strong>I prezzi sono da listino e soggetti a variazioni. I costi di trasporto vanno sempre confermati al momento dell'ordine.</strong></div>
+  </div>
+  <div class="tot-bar">
+    <div><div class="tot-lbl">Totale Ordine</div><div style="font-size:9px;opacity:.5;margin-top:2px">IVA esclusa · trasporto escluso</div></div>
+    <div class="tot-amt" id="grandTotal">€ 0,00</div>
+  </div>
+  <div class="nav-row">
+    <button class="btn-o" style="margin-bottom:0" onclick="go('dest',1)">← Dest.</button>
+    <button class="btn-p" style="flex:2;margin-bottom:0" onclick="go('recap',3)">Riepilogo →</button>
+  </div>
+</div>
+
+<!-- ══════════ RIEPILOGO ══════════ -->
+<div class="sec" id="tab-recap">
+  <div class="card">
+    <div class="card-hd">Anteprima Ordine</div>
+    <div id="previewCont"></div>
+  </div>
+  <div class="tot-bar">
+    <div><div class="tot-lbl">Totale Ordine</div><div style="font-size:9px;opacity:.5;margin-top:2px">IVA esclusa · trasporto escluso</div></div>
+    <div class="tot-amt" id="grandTotal2">€ 0,00</div>
+  </div>
+  <div style="background:#fff8e1;border:1px solid #f0c040;border-radius:8px;padding:11px 13px;margin-bottom:12px;display:flex;gap:9px;align-items:flex-start">
+    <span style="font-size:16px;flex-shrink:0">⚠️</span>
+    <div style="font-size:10px;color:#5a4000;line-height:1.6"><strong>Prezzi indicativi da listino, soggetti a variazioni senza preavviso.</strong> I costi di trasporto sono da confermare al momento dell'ordine in base a destinazione, quantità e tipologia di consegna. Il documento non costituisce conferma d'ordine.</div>
+  </div>
+  <button class="btn-s" onclick="saveDraft()">💾 Salva come Bozza</button>
+  <button class="btn-o" onclick="openModal()">👁 Modulo Completo</button>
+  <button class="btn-p" onclick="sendMail()">✉️📎 Invia con PDF allegato</button>
+</div>
+
+<!-- ══════════ RUBRICA / SALVATAGGI ══════════ -->
+<div class="sec" id="tab-rubrica">
+  <div class="card">
+    <div class="card-hd">
+      Anagrafiche Clienti
+      <span class="badge" id="anaCount">0</span>
+    </div>
+    <div id="anaList">
+      <div class="empty-st"><div class="ei">👤</div><p>Nessuna anagrafica salvata.<br>Dalla scheda <b>Cliente</b> premi <b>+ Salva cliente</b>.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-hd">
+      Bozze Ordini
+      <span class="badge" id="draftCount">0</span>
+    </div>
+    <div id="draftList">
+      <div class="empty-st"><div class="ei">📝</div><p>Nessuna bozza salvata.<br>Dal <b>Riepilogo</b> premi <b>💾 Salva come Bozza</b>.</p></div>
+    </div>
+  </div>
+  <div style="height:16px"></div>
+</div>
+
+<!-- MODAL ANTEPRIMA -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <span class="modal-close" onclick="closeModal()">✕</span>
+    <div id="modalCont"></div>
+    <button class="btn-p" style="margin-top:14px" onclick="sendMail()">✉️📎 Invia con PDF allegato</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- PDF OVERLAY -->
+<div id="pdfOverlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:500;align-items:center;justify-content:center;flex-direction:column;gap:16px">
+  <div style="background:white;border-radius:12px;padding:24px 28px;text-align:center;max-width:280px;width:90%">
+    <div style="font-size:32px;margin-bottom:8px">📄</div>
+    <div style="font-size:15px;font-weight:800;color:#111;margin-bottom:6px" id="pdfStep">Generazione PDF…</div>
+    <div style="font-size:12px;color:#888;line-height:1.5;margin-bottom:16px" id="pdfMsg">Attendere…</div>
+    <div id="pdfActions" style="display:none;display:flex;flex-direction:column;gap:8px">
+      <button onclick="doPdfDownload()" style="width:100%;padding:12px;background:#C8201A;color:white;border:none;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer">⬇️ Scarica PDF</button>
+      <button onclick="doOpenMail()" style="width:100%;padding:12px;background:#111;color:white;border:none;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer">✉️ Apri Mail</button>
+      <button onclick="doBoth()" style="width:100%;padding:12px;background:white;color:#111;border:2px solid #111;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer">📎 Entrambi</button>
+      <button onclick="closePdfOverlay()" style="width:100%;padding:10px;background:transparent;color:#aaa;border:none;font-size:13px;cursor:pointer">Annulla</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+<script>
+
+const CAT = [
+// ─── PANNELLI ISOLANTI ─── SWISSPOR EPS ISORAY 031 ───
+{c:'C01262',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.20mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01263',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.30mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01264',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.40mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01265',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.50mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01266',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.60mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01268',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.80mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01269',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.100mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01271',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.120mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01273',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.140mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01275',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.150mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01276',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.160mm',u:'m³',p:51.92,g:'ISORAY 031'},
+{c:'C01277',d:'LICATATHERM EPS S ISORAY 031/T150 GRIGIO 1000x500 SP.180mm',u:'m³',p:51.92,g:'ISORAY 031'},
+// ISORAY 030
+{c:'C01407',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.20mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01408',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.30mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01409',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.40mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01410',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.50mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01411',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.60mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01412',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.80mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01413',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.100mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01414',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.120mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01415',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.140mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01416',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.160mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01417',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.180mm',u:'m³',p:56.64,g:'ISORAY 030'},
+{c:'C01639',d:'LICATATHERM EPS S ISORAY 030/T150 GRIGIO 1000x500 SP.200mm',u:'m³',p:56.64,g:'ISORAY 030'},
+// ECHORAY 030
+{c:'C01918',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.80mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01958',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.90mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01959',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.100mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01913',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.120mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01963',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.140mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01964',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.150mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01967',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.180mm',u:'m³',p:73.20,g:'ECHORAY'},
+{c:'C01969',d:'LICATATHERM EPS S ECHORAY 030/T100 GRIGIO 1000x500 SP.200mm',u:'m³',p:73.20,g:'ECHORAY'},
+// TATANKA 035
+{c:'C01418',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.20mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01419',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.30mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01420',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.40mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01421',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.50mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01422',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.60mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01423',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.80mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01424',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.100mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01425',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.120mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01426',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.140mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01427',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.160mm',u:'m³',p:46.02,g:'TATANKA 035'},
+{c:'C01428',d:'LICATATHERM EPS S TATANKA 035/T150 BIANCO 1000x500 SP.180mm',u:'m³',p:46.02,g:'TATANKA 035'},
+// TATANKA CZ
+{c:'C01834',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.50mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01294',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.80mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01296',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.100mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01298',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.120mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01300',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.140mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01301',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.150mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01304',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.180mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+{c:'C01306',d:'LICATATHERM EPS S TATANKA CZ 033/T250 AZZURRO 1000x500 SP.200mm',u:'m³',p:102.66,g:'TATANKA CZ'},
+// SINTORAY COVER
+{c:'C01576',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.80mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01578',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.100mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01580',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.120mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01582',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.140mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01583',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.150mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01584',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.160mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01586',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.180mm',u:'m³',p:66.08,g:'SINTORAY'},
+{c:'C01588',d:'LICATATHERM EPS S SINTORAY COVER 030/T150 GRIGIO 1200x600 SP.200mm',u:'m³',p:66.08,g:'SINTORAY'},
+// SINTORAY ZETA
+{c:'C01280',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.80mm',u:'m³',p:106.20,g:'SINTORAY'},
+{c:'C01282',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.100mm',u:'m³',p:106.20,g:'SINTORAY'},
+{c:'C01284',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.120mm',u:'m³',p:106.20,g:'SINTORAY'},
+{c:'C01286',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.140mm',u:'m³',p:106.20,g:'SINTORAY'},
+{c:'C01287',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.150mm',u:'m³',p:106.20,g:'SINTORAY'},
+{c:'C01290',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.180mm',u:'m³',p:106.20,g:'SINTORAY'},
+{c:'C01292',d:'LICATATHERM EPS S SINTORAY ZETA 030/T150 GRIGIO 1200x600 SP.200mm',u:'m³',p:106.20,g:'SINTORAY'},
+// XPS SWISSPOR
+{c:'C01670',d:'LICATATHERM S XPS 300 GE 1250x600 SP.30mm',u:'m³',p:120.00,g:'XPS'},
+{c:'C01671',d:'LICATATHERM S XPS 300 GE 1250x600 SP.40mm',u:'m³',p:101.76,g:'XPS'},
+{c:'C01672',d:'LICATATHERM S XPS 300 GE 1250x600 SP.50mm',u:'m³',p:96.00,g:'XPS'},
+{c:'C01673',d:'LICATATHERM S XPS 300 GE 1250x600 SP.60mm',u:'m³',p:96.00,g:'XPS'},
+{c:'C01674',d:'LICATATHERM S XPS 300 GE 1250x600 SP.80mm',u:'m³',p:96.00,g:'XPS'},
+{c:'C01675',d:'LICATATHERM S XPS 300 GE 1250x600 SP.100mm',u:'m³',p:96.00,g:'XPS'},
+{c:'C01678',d:'LICATATHERM S XPS 300 GE 1250x600 SP.160mm',u:'m³',p:100.80,g:'XPS'},
+{c:'C01680',d:'LICATATHERM S XPS 300 GE 1250x600 SP.200mm',u:'m³',p:103.20,g:'XPS'},
+// XPS SOPREMA
+{c:'C01453',d:'LICATATHERM SOPRA WF XPS 1250x600 SP.30mm',u:'m³',p:92.04,g:'XPS'},
+{c:'C01455',d:'LICATATHERM SOPRA WF XPS 1250x600 SP.50mm',u:'m³',p:92.04,g:'XPS'},
+{c:'C01457',d:'LICATATHERM SOPRA WF XPS 1250x600 SP.80mm',u:'m³',p:92.04,g:'XPS'},
+{c:'C01458',d:'LICATATHERM SOPRA WF XPS 1250x600 SP.100mm',u:'m³',p:92.04,g:'XPS'},
+{c:'C01461',d:'LICATATHERM SOPRA WF XPS 1250x600 SP.160mm',u:'m³',p:92.04,g:'XPS'},
+{c:'C01463',d:'LICATATHERM SOPRA WF XPS 1250x600 SP.200mm',u:'m³',p:92.04,g:'XPS'},
+// PIR
+{c:'C01626',d:'LICATATHERM PIR F SP.20mm (prezzo BG-BS area)',u:'m²',p:5.18,g:'PIR'},
+{c:'C01628',d:'LICATATHERM PIR F SP.40mm (prezzo BG-BS area)',u:'m²',p:7.45,g:'PIR'},
+{c:'C01630',d:'LICATATHERM PIR F SP.60mm (prezzo BG-BS area)',u:'m²',p:9.19,g:'PIR'},
+{c:'C01632',d:'LICATATHERM PIR F SP.80mm (prezzo BG-BS area)',u:'m²',p:11.94,g:'PIR'},
+{c:'C01633',d:'LICATATHERM PIR F SP.100mm (prezzo BG-BS area)',u:'m²',p:13.85,g:'PIR'},
+{c:'C01634',d:'LICATATHERM PIR F SP.120mm (prezzo BG-BS area)',u:'m²',p:16.11,g:'PIR'},
+{c:'C01635',d:'LICATATHERM PIR F SP.140mm (prezzo BG-BS area)',u:'m²',p:18.42,g:'PIR'},
+{c:'C01636',d:'LICATATHERM PIR F SP.160mm (prezzo BG-BS area)',u:'m²',p:20.71,g:'PIR'},
+{c:'C01638',d:'LICATATHERM PIR F SP.200mm (prezzo BG-BS area)',u:'m²',p:25.62,g:'PIR'},
+// ARSANIT
+{c:'C01205',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.20mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01207',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.40mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01209',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.60mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01210',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.80mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01211',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.100mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01212',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.120mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01214',d:'LICATATHERM EPS A 031/T100 GRIGIO 1000x500 SP.160mm',u:'m³',p:44.84,g:'ARSANIT'},
+{c:'C01244',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.20mm',u:'m³',p:37.76,g:'ARSANIT'},
+{c:'C01246',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.40mm',u:'m³',p:37.76,g:'ARSANIT'},
+{c:'C01248',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.60mm',u:'m³',p:37.76,g:'ARSANIT'},
+{c:'C01249',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.80mm',u:'m³',p:37.76,g:'ARSANIT'},
+{c:'C01250',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.100mm',u:'m³',p:37.76,g:'ARSANIT'},
+{c:'C01252',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.140mm',u:'m³',p:37.76,g:'ARSANIT'},
+{c:'C01253',d:'LICATATHERM EPS A 035/T150 BIANCO 1000x500 SP.160mm',u:'m³',p:37.76,g:'ARSANIT'},
+// SIRAPOR
+{c:'C01480',d:'LICATATHERM EPS SIRAPOR 036/T100 BIANCO 1000x500 SP.20mm',u:'m³',p:46.02,g:'SIRAPOR'},
+{c:'C01482',d:'LICATATHERM EPS SIRAPOR 036/T100 BIANCO 1000x500 SP.40mm',u:'m³',p:46.02,g:'SIRAPOR'},
+{c:'C01485',d:'LICATATHERM EPS SIRAPOR 036/T100 BIANCO 1000x500 SP.80mm',u:'m³',p:46.02,g:'SIRAPOR'},
+{c:'C01486',d:'LICATATHERM EPS SIRAPOR 036/T100 BIANCO 1000x500 SP.100mm',u:'m³',p:46.02,g:'SIRAPOR'},
+{c:'C01488',d:'LICATATHERM EPS SIRAPOR 036/T100 BIANCO 1000x500 SP.120mm',u:'m³',p:46.02,g:'SIRAPOR'},
+{c:'C01490',d:'LICATATHERM EPS SIRAPOR 036/T100 BIANCO 1000x500 SP.140mm',u:'m³',p:46.02,g:'SIRAPOR'},
+{c:'C01464',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.20mm',u:'m³',p:51.33,g:'SIRAPOR'},
+{c:'C01466',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.40mm',u:'m³',p:51.33,g:'SIRAPOR'},
+{c:'C01469',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.80mm',u:'m³',p:51.33,g:'SIRAPOR'},
+{c:'C01470',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.100mm',u:'m³',p:51.33,g:'SIRAPOR'},
+{c:'C01472',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.120mm',u:'m³',p:51.33,g:'SIRAPOR'},
+{c:'C01476',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.150mm',u:'m³',p:51.33,g:'SIRAPOR'},
+{c:'C01479',d:'LICATATHERM EPS SIRAPOR 035/T150 BIANCO 1000x500 SP.200mm',u:'m³',p:51.33,g:'SIRAPOR'},
+// NEOSTIR
+{c:'C01495',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.20mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01497',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.40mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01499',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.60mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01500',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.80mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01501',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.100mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01503',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.120mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01506',d:'LICATATHERM EPS NEOSTIR 031/T100 GRIGIO 1000x500 SP.150mm',u:'m³',p:50.74,g:'NEOSTIR'},
+{c:'C01510',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.20mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01512',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.40mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01514',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.60mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01515',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.80mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01516',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.100mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01518',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.120mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01521',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.150mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01522',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.160mm',u:'m³',p:56.64,g:'NEOSTIR'},
+{c:'C01524',d:'LICATATHERM EPS NEOSTIR 030/T150 GRIGIO 1000x500 SP.200mm',u:'m³',p:56.64,g:'NEOSTIR'},
+// PORON
+{c:'C01349',d:'LICATATHERM EPS P B031/T100 1000x500 SP.20mm (cont.)',u:'m³',p:65.71,g:'PORON'},
+{c:'C01351',d:'LICATATHERM EPS P B031/T100 1000x500 SP.40mm (cont.)',u:'m³',p:63.94,g:'PORON'},
+{c:'C01353',d:'LICATATHERM EPS P B031/T100 1000x500 SP.60mm (cont.)',u:'m³',p:63.35,g:'PORON'},
+{c:'C01354',d:'LICATATHERM EPS P B031/T100 1000x500 SP.80mm (cont.)',u:'m³',p:63.05,g:'PORON'},
+{c:'C01355',d:'LICATATHERM EPS P B031/T100 1000x500 SP.100mm (cont.)',u:'m³',p:62.87,g:'PORON'},
+{c:'C01357',d:'LICATATHERM EPS P B031/T100 1000x500 SP.140mm (cont.)',u:'m³',p:62.67,g:'PORON'},
+{c:'C01555',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.20mm (cont.)',u:'m³',p:72.37,g:'PORON'},
+{c:'C01557',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.40mm (cont.)',u:'m³',p:71.71,g:'PORON'},
+{c:'C01559',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.60mm (cont.)',u:'m³',p:71.48,g:'PORON'},
+{c:'C01560',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.80mm (cont.)',u:'m³',p:70.26,g:'PORON'},
+{c:'C01561',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.100mm (cont.)',u:'m³',p:69.97,g:'PORON'},
+{c:'C01562',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.120mm (cont.)',u:'m³',p:69.41,g:'PORON'},
+{c:'C01564',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.160mm (cont.)',u:'m³',p:68.71,g:'PORON'},
+{c:'C01565',d:'LICATATHERM EPS P BT030/T150 1000x500 SP.180mm (cont.)',u:'m³',p:68.48,g:'PORON'},
+// Lana di Roccia
+{c:'C01389',d:'FRONTROCK MAX PLUS 120/70 kg/m³ SP.50mm (Nord)',u:'m³',p:129.80,g:'Lana Roccia'},
+{c:'C01390',d:'FRONTROCK MAX PLUS 120/70 kg/m³ SP.60mm (Nord)',u:'m³',p:129.80,g:'Lana Roccia'},
+{c:'C01391',d:'FRONTROCK MAX PLUS 120/70 kg/m³ SP.80mm (Nord)',u:'m³',p:129.80,g:'Lana Roccia'},
+{c:'C01392',d:'FRONTROCK MAX PLUS 120/70 kg/m³ SP.100mm (Nord)',u:'m³',p:129.80,g:'Lana Roccia'},
+{c:'C01393',d:'FRONTROCK MAX PLUS 120/70 kg/m³ SP.120mm (Nord)',u:'m³',p:129.80,g:'Lana Roccia'},
+{c:'C01445',d:'FRONTROCK PRO 110-75 kg/m³ SP.60mm (Nord)',u:'m³',p:132.16,g:'Lana Roccia'},
+{c:'C01446',d:'FRONTROCK PRO 110-75 kg/m³ SP.80mm (Nord)',u:'m³',p:132.16,g:'Lana Roccia'},
+{c:'C01447',d:'FRONTROCK PRO 110-75 kg/m³ SP.100mm (Nord)',u:'m³',p:132.16,g:'Lana Roccia'},
+{c:'C01727',d:'LANA ROCCIA WALL 80 kg 0.034 1000x600 SP.50mm',u:'m²',p:127.20,g:'Lana Roccia'},
+{c:'C01728',d:'LANA ROCCIA WALL 80 kg 0.034 1000x600 SP.60mm',u:'m²',p:127.20,g:'Lana Roccia'},
+{c:'C01796',d:'LANA ROCCIA WALL 80 kg 0.034 1000x600 SP.80mm',u:'m²',p:127.20,g:'Lana Roccia'},
+{c:'C01730',d:'LANA ROCCIA WALL 80 kg 0.034 1000x600 SP.100mm',u:'m²',p:127.20,g:'Lana Roccia'},
+{c:'C01195',d:'SMARTWALL N500 FB 90kg 0.034 1200x500 SP.50mm (Nord)',u:'m³',p:130.54,g:'Lana Roccia'},
+{c:'C01196',d:'SMARTWALL N500 FB 90kg 0.034 1200x500 SP.60mm (Nord)',u:'m³',p:130.54,g:'Lana Roccia'},
+{c:'C01197',d:'SMARTWALL N500 FB 90kg 0.034 1200x500 SP.80mm (Nord)',u:'m³',p:130.54,g:'Lana Roccia'},
+{c:'C01198',d:'SMARTWALL N500 FB 90kg 0.034 1200x500 SP.100mm (Nord)',u:'m³',p:130.54,g:'Lana Roccia'},
+{c:'C01799',d:'LANA ROCCIA P 80 kg 0.034 1000x600 SP.60mm',u:'m²',p:121.20,g:'Lana Roccia'},
+{c:'C01800',d:'LANA ROCCIA P 80 kg 0.034 1000x600 SP.80mm',u:'m²',p:121.20,g:'Lana Roccia'},
+{c:'C01814',d:'LANA ROCCIA P 95 kg 0.035 1000x600 SP.60mm',u:'m²',p:135.60,g:'Lana Roccia'},
+{c:'C01815',d:'LANA ROCCIA P 95 kg 0.035 1000x600 SP.80mm',u:'m²',p:135.60,g:'Lana Roccia'},
+{c:'C01816',d:'LANA ROCCIA P 95 kg 0.035 1000x600 SP.100mm',u:'m²',p:135.60,g:'Lana Roccia'},
+// Fibra di Legno
+{c:'C01851',d:'FIBRA LEGNO DRY 140 Λ0.039 1200x600 SP.40mm',u:'m²',p:231.43,g:'Fibra Legno'},
+{c:'C01880',d:'FIBRA LEGNO DRY 140 Λ0.039 1200x600 SP.60mm',u:'m²',p:231.43,g:'Fibra Legno'},
+{c:'C01881',d:'FIBRA LEGNO DRY 140 Λ0.039 1200x600 SP.80mm',u:'m²',p:231.43,g:'Fibra Legno'},
+{c:'C01882',d:'FIBRA LEGNO DRY 140 Λ0.039 1200x600 SP.100mm',u:'m²',p:231.43,g:'Fibra Legno'},
+{c:'C01888',d:'FIBRA LEGNO DRY 110 Λ0.037 1200x600 SP.40mm',u:'m²',p:197.48,g:'Fibra Legno'},
+{c:'C01873',d:'FIBRA LEGNO DRY 110 Λ0.037 1200x600 SP.60mm',u:'m²',p:197.48,g:'Fibra Legno'},
+{c:'C01874',d:'FIBRA LEGNO DRY 110 Λ0.037 1200x600 SP.80mm',u:'m²',p:197.48,g:'Fibra Legno'},
+{c:'C01875',d:'FIBRA LEGNO DRY 110 Λ0.037 1200x600 SP.100mm',u:'m²',p:197.48,g:'Fibra Legno'},
+// Fenolico
+{c:'C01363',d:'FENO SUPERCEL VITRUM 1200x600 SP.20mm',u:'m²',p:8.58,g:'Fenolico'},
+{c:'C01364',d:'FENO SUPERCEL VITRUM 1200x600 SP.30mm',u:'m²',p:11.09,g:'Fenolico'},
+{c:'C01365',d:'FENO SUPERCEL VITRUM 1200x600 SP.40mm',u:'m²',p:12.93,g:'Fenolico'},
+{c:'C01606',d:'FENO SUPERCEL VITRUM 1200x600 SP.50mm',u:'m²',p:15.34,g:'Fenolico'},
+{c:'C01367',d:'FENO SUPERCEL VITRUM 1200x600 SP.60mm',u:'m²',p:17.83,g:'Fenolico'},
+{c:'C01369',d:'FENO SUPERCEL VITRUM 1200x600 SP.80mm',u:'m²',p:23.26,g:'Fenolico'},
+{c:'C01371',d:'FENO SUPERCEL VITRUM 1200x600 SP.100mm',u:'m²',p:28.05,g:'Fenolico'},
+{c:'C01372',d:'FENO SUPERCEL VITRUM 1200x600 SP.120mm',u:'m²',p:34.54,g:'Fenolico'},
+{c:'C01375',d:'FENO SUPERCEL VITRUM 1200x600 SP.150mm',u:'m²',p:44.38,g:'Fenolico'},
+{c:'C01376',d:'FENO SUPERCEL VITRUM 1200x600 SP.160mm',u:'m²',p:47.28,g:'Fenolico'},
+// Lana di Vetro ISOVER
+{c:'C01429',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.40mm',u:'m²',p:6.23,g:'Lana Vetro'},
+{c:'C01430',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.50mm',u:'m²',p:7.80,g:'Lana Vetro'},
+{c:'C01431',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.60mm',u:'m²',p:9.36,g:'Lana Vetro'},
+{c:'C01432',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.80mm',u:'m²',p:12.48,g:'Lana Vetro'},
+{c:'C01433',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.100mm',u:'m²',p:15.59,g:'Lana Vetro'},
+{c:'C01434',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.120mm',u:'m²',p:18.71,g:'Lana Vetro'},
+{c:'C01435',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.140mm',u:'m²',p:21.84,g:'Lana Vetro'},
+{c:'C01436',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.160mm',u:'m²',p:24.95,g:'Lana Vetro'},
+{c:'C01437',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.180mm',u:'m²',p:28.07,g:'Lana Vetro'},
+{c:'C01438',d:'LANA VETRO I CLIMA34 G3 1200x600 SP.200mm',u:'m²',p:31.18,g:'Lana Vetro'},
+// ─── TASSELLI ───
+{c:'C01309',d:'TASSELLO TFIX-8P 8/115 (plastica)',u:'cad',p:0.44,g:'Tasselli'},
+{c:'C01310',d:'TASSELLO TFIX-8P 8/135 (plastica)',u:'cad',p:0.45,g:'Tasselli'},
+{c:'C01311',d:'TASSELLO TFIX-8P 8/155 (plastica)',u:'cad',p:0.50,g:'Tasselli'},
+{c:'C01312',d:'TASSELLO TFIX-8P 8/175 (plastica)',u:'cad',p:0.53,g:'Tasselli'},
+{c:'C01313',d:'TASSELLO TFIX-8P 8/195 (plastica)',u:'cad',p:0.55,g:'Tasselli'},
+{c:'C01314',d:'TASSELLO TFIX-8P 8/215 (plastica)',u:'cad',p:0.58,g:'Tasselli'},
+{c:'C01315',d:'TASSELLO R-TFIX-8M 8/95 (acciaio)',u:'cad',p:0.55,g:'Tasselli'},
+{c:'C01316',d:'TASSELLO R-TFIX-8M 8/115 (acciaio)',u:'cad',p:0.59,g:'Tasselli'},
+{c:'C01317',d:'TASSELLO R-TFIX-8M 8/135 (acciaio)',u:'cad',p:0.62,g:'Tasselli'},
+{c:'C01318',d:'TASSELLO R-TFIX-8M 8/155 (acciaio)',u:'cad',p:0.70,g:'Tasselli'},
+{c:'C01319',d:'TASSELLO R-TFIX-8M 8/175 (acciaio)',u:'cad',p:0.75,g:'Tasselli'},
+{c:'C01320',d:'TASSELLO R-TFIX-8M 8/195 (acciaio)',u:'cad',p:0.80,g:'Tasselli'},
+{c:'C01321',d:'TASSELLO R-TFIX-8M 8/215 (acciaio)',u:'cad',p:0.91,g:'Tasselli'},
+{c:'C01322',d:'TASSELLO R-TFIX-8M 8/235 (acciaio)',u:'cad',p:1.16,g:'Tasselli'},
+{c:'C01326',d:'TASSELLO R-TFIX-8S 8/115 (acciaio avvitamento)',u:'cad',p:0.75,g:'Tasselli'},
+{c:'C01327',d:'TASSELLO R-TFIX-8S 8/135 (acciaio avvitamento)',u:'cad',p:0.80,g:'Tasselli'},
+{c:'C01328',d:'TASSELLO R-TFIX-8S 8/155 (acciaio avvitamento)',u:'cad',p:0.88,g:'Tasselli'},
+{c:'C01329',d:'TASSELLO R-TFIX-8S 8/175 (acciaio avvitamento)',u:'cad',p:1.09,g:'Tasselli'},
+{c:'C01330',d:'TASSELLO R-TFIX-8S 8/195 (acciaio avvitamento)',u:'cad',p:1.29,g:'Tasselli'},
+{c:'C01331',d:'TASSELLO R-TFIX-8S 8/215 (acciaio avvitamento)',u:'cad',p:1.48,g:'Tasselli'},
+{c:'C01332',d:'TASSELLO R-TFIX-8S 8/235 (acciaio avvitamento)',u:'cad',p:1.51,g:'Tasselli'},
+{c:'C01333',d:'TASSELLO R-TFIX-8S 8/255 (acciaio avvitamento)',u:'cad',p:1.70,g:'Tasselli'},
+{c:'C01334',d:'TASSELLO R-TFIX-8S 8/275 (acciaio avvitamento)',u:'cad',p:1.80,g:'Tasselli'},
+{c:'C01335',d:'TASSELLO R-TFIX-8S 8/295 (acciaio avvitamento)',u:'cad',p:1.92,g:'Tasselli'},
+{c:'C00086',d:'TASSELLO PN 8/110 CHIODO IN PLASTICA TERMOZ',u:'cad',p:0.52,g:'Tasselli'},
+{c:'C00141',d:'TASSELLO PN 8/130 CHIODO IN PLASTICA TERMOZ',u:'cad',p:0.54,g:'Tasselli'},
+{c:'C00143',d:'TASSELLO PN 8/150 CHIODO IN PLASTICA TERMOZ',u:'cad',p:0.59,g:'Tasselli'},
+{c:'C00144',d:'TASSELLO PN 8/170 CHIODO IN PLASTICA TERMOZ',u:'cad',p:0.66,g:'Tasselli'},
+{c:'C00146',d:'TASSELLO PN 8/190 CHIODO IN PLASTICA TERMOZ',u:'cad',p:0.72,g:'Tasselli'},
+{c:'C00142',d:'TASSELLO PN 8/210 CHIODO IN PLASTICA TERMOZ',u:'cad',p:0.77,g:'Tasselli'},
+{c:'C00104',d:'TASSELLO CN 8/110 CHIODO ACCIAIO TERMOZ',u:'cad',p:0.75,g:'Tasselli'},
+{c:'C00134',d:'TASSELLO CN 8/130 CHIODO ACCIAIO TERMOZ',u:'cad',p:0.79,g:'Tasselli'},
+{c:'C00150',d:'TASSELLO CN 8/150 CHIODO ACCIAIO TERMOZ',u:'cad',p:0.81,g:'Tasselli'},
+{c:'C00153',d:'TASSELLO CN 8/170 CHIODO ACCIAIO TERMOZ',u:'cad',p:0.89,g:'Tasselli'},
+{c:'C00151',d:'TASSELLO CN 8/190 CHIODO ACCIAIO TERMOZ',u:'cad',p:0.98,g:'Tasselli'},
+{c:'C00147',d:'TASSELLO CN 8/210 CHIODO ACCIAIO TERMOZ',u:'cad',p:1.06,g:'Tasselli'},
+{c:'C00154',d:'TASSELLO CN 8/230 CHIODO ACCIAIO TERMOZ',u:'cad',p:1.16,g:'Tasselli'},
+{c:'C00304',d:'TASSELLO CN 8/250 CHIODO ACCIAIO TERMOZ',u:'cad',p:2.79,g:'Tasselli'},
+{c:'C01575',d:'TASSELLO CS II 8/95 TERMOZ (avvitamento)',u:'cad',p:0.86,g:'Tasselli'},
+{c:'C01567',d:'TASSELLO CS II 8/115 TERMOZ (avvitamento)',u:'cad',p:0.98,g:'Tasselli'},
+{c:'C01256',d:'TASSELLO CS II 8/135 TERMOZ (avvitamento)',u:'cad',p:0.96,g:'Tasselli'},
+{c:'C00058',d:'TASSELLO CS II 8/155 TERMOZ (avvitamento)',u:'cad',p:1.09,g:'Tasselli'},
+{c:'C00120',d:'TASSELLO CS II 8/175 TERMOZ (avvitamento)',u:'cad',p:1.27,g:'Tasselli'},
+{c:'C00064',d:'TASSELLO CS II 8/195 TERMOZ (avvitamento)',u:'cad',p:1.52,g:'Tasselli'},
+{c:'C00267',d:'TASSELLO CS II 8/215 TERMOZ (avvitamento)',u:'cad',p:1.80,g:'Tasselli'},
+{c:'C00106',d:'TASSELLO CS II 8/235 TERMOZ (avvitamento)',u:'cad',p:2.34,g:'Tasselli'},
+{c:'C00166',d:'TASSELLO TERMOZ 6H 60 (per legno)',u:'cad',p:1.07,g:'Tasselli'},
+{c:'C00323',d:'TASSELLO TERMOZ 6H 80 (per legno)',u:'cad',p:1.12,g:'Tasselli'},
+{c:'C00149',d:'TASSELLO TERMOZ 6H 160 (per legno)',u:'cad',p:1.62,g:'Tasselli'},
+{c:'C00316',d:'TASSELLO TERMOZ 6H 200 (per legno)',u:'cad',p:2.15,g:'Tasselli'},
+{c:'C00318',d:'TASSELLO TERMOZ 6H 240 (per legno)',u:'cad',p:2.75,g:'Tasselli'},
+{c:'C01257',d:'TASSELLO TERMOZ SV II ECOTWIST 10-30 (a scomparsa)',u:'cad',p:2.02,g:'Tasselli'},
+{c:'C00927',d:'TASSELLO KLIMAS FIXPLUG 8/110 (plastica)',u:'cad',p:0.29,g:'Tasselli'},
+{c:'C00928',d:'TASSELLO KLIMAS FIXPLUG 8/130 (plastica)',u:'cad',p:0.33,g:'Tasselli'},
+{c:'C00929',d:'TASSELLO KLIMAS FIXPLUG 8/150 (plastica)',u:'cad',p:0.40,g:'Tasselli'},
+{c:'C00933',d:'TASSELLO KLIMAS WKTHERM 8/95 (acciaio)',u:'cad',p:0.51,g:'Tasselli'},
+{c:'C00934',d:'TASSELLO KLIMAS WKTHERM 8/135 (acciaio)',u:'cad',p:0.66,g:'Tasselli'},
+{c:'C00950',d:'TASSELLO KLIMAS WKTHERM 8/155 (acciaio)',u:'cad',p:0.75,g:'Tasselli'},
+{c:'C00951',d:'TASSELLO KLIMAS WKTHERM 8/175 (acciaio)',u:'cad',p:0.86,g:'Tasselli'},
+{c:'C00952',d:'TASSELLO KLIMAS WKTHERM 8/195 (acciaio)',u:'cad',p:0.99,g:'Tasselli'},
+{c:'C00938',d:'TASSELLO KLIMAS WKTHERM S 8/95 (avvitamento)',u:'cad',p:0.54,g:'Tasselli'},
+{c:'C00939',d:'TASSELLO KLIMAS WKTHERM S 8/115 (avvitamento)',u:'cad',p:0.60,g:'Tasselli'},
+{c:'C00940',d:'TASSELLO KLIMAS WKTHERM S 8/135 (avvitamento)',u:'cad',p:0.69,g:'Tasselli'},
+{c:'C00941',d:'TASSELLO KLIMAS WKTHERM S 8/155 (avvitamento)',u:'cad',p:0.79,g:'Tasselli'},
+{c:'C00942',d:'TASSELLO KLIMAS WKTHERM S 8/175 (avvitamento)',u:'cad',p:0.91,g:'Tasselli'},
+{c:'C00943',d:'TASSELLO KLIMAS WKTHERM S 8/195 (avvitamento)',u:'cad',p:1.02,g:'Tasselli'},
+{c:'C01983',d:'TASSELLO H3 075 (plastica)',u:'cad',p:0.49,g:'Tasselli'},
+{c:'C01984',d:'TASSELLO H3 095 (plastica)',u:'cad',p:0.50,g:'Tasselli'},
+{c:'C01985',d:'TASSELLO H3 115 (plastica)',u:'cad',p:0.52,g:'Tasselli'},
+{c:'C01986',d:'TASSELLO H3 135 (plastica)',u:'cad',p:0.56,g:'Tasselli'},
+{c:'C01987',d:'TASSELLO H3 155 (plastica)',u:'cad',p:0.62,g:'Tasselli'},
+{c:'C01992',d:'TASSELLO H2 095 (acciaio)',u:'cad',p:0.64,g:'Tasselli'},
+{c:'C01993',d:'TASSELLO H2 115 (acciaio)',u:'cad',p:0.66,g:'Tasselli'},
+{c:'C01994',d:'TASSELLO H2 135 (acciaio)',u:'cad',p:0.71,g:'Tasselli'},
+{c:'C01995',d:'TASSELLO H2 155 (acciaio)',u:'cad',p:0.80,g:'Tasselli'},
+{c:'C01996',d:'TASSELLO H2 175 (acciaio)',u:'cad',p:0.92,g:'Tasselli'},
+{c:'C02003',d:'TASSELLO STR U 2G 115 (avvitamento)',u:'cad',p:0.75,g:'Tasselli'},
+{c:'C02004',d:'TASSELLO STR U 2G 135 (avvitamento)',u:'cad',p:0.86,g:'Tasselli'},
+{c:'C02005',d:'TASSELLO STR U 2G 155 (avvitamento)',u:'cad',p:1.04,g:'Tasselli'},
+{c:'C02006',d:'TASSELLO STR U 2G 175 (avvitamento)',u:'cad',p:1.21,g:'Tasselli'},
+{c:'C02007',d:'TASSELLO STR U 2G 195 (avvitamento)',u:'cad',p:1.46,g:'Tasselli'},
+{c:'C02008',d:'TASSELLO STR U 2G 215 (avvitamento)',u:'cad',p:1.50,g:'Tasselli'},
+{c:'C02009',d:'TASSELLO STR U 2G 235 (avvitamento)',u:'cad',p:1.60,g:'Tasselli'},
+{c:'C02013',d:'TASSELLO STR U 2G 315 (avvitamento)',u:'cad',p:3.03,g:'Tasselli'},
+{c:'C02014',d:'TASSELLO STR H 080 (per legno)',u:'cad',p:1.01,g:'Tasselli'},
+{c:'C02015',d:'TASSELLO STR H 100 (per legno)',u:'cad',p:1.02,g:'Tasselli'},
+{c:'C02016',d:'TASSELLO STR H 120 (per legno)',u:'cad',p:1.14,g:'Tasselli'},
+{c:'C02017',d:'TASSELLO STR H 140 (per legno)',u:'cad',p:1.26,g:'Tasselli'},
+{c:'C02018',d:'TASSELLO STR H 160 (per legno)',u:'cad',p:1.48,g:'Tasselli'},
+{c:'C02020',d:'TASSELLO STR H 200 (per legno)',u:'cad',p:1.86,g:'Tasselli'},
+{c:'C02025',d:'TASSELLO STR H 300 (per legno)',u:'cad',p:3.24,g:'Tasselli'},
+// tappi e rondelle
+{c:'C01342',d:'TAPPO IN EPS BIANCO (per tasselli R)',u:'cad',p:0.13,g:'Tasselli'},
+{c:'C01343',d:'TAPPO IN EPS GRIGIO (per tasselli R)',u:'cad',p:0.14,g:'Tasselli'},
+{c:'C01344',d:'TAPPO IN LANA DI ROCCIA (per tasselli R)',u:'cad',p:0.32,g:'Tasselli'},
+{c:'C01339',d:'TAPPO IN EPS BIANCO (TERMOZ F)',u:'cad',p:0.23,g:'Tasselli'},
+{c:'C01340',d:'TAPPO IN EPS GRIGIO (TERMOZ F)',u:'cad',p:0.23,g:'Tasselli'},
+{c:'C01341',d:'TAPPO IN LANA DI ROCCIA (TERMOZ F)',u:'cad',p:1.17,g:'Tasselli'},
+{c:'C00355',d:'RONDELLA Ø 90mm (SCAT. DA 100 PZ)',u:'cad',p:0.60,g:'Tasselli'},
+{c:'C01337',d:'RONDELLA IN NYLON TDX 90',u:'cad',p:4.13,g:'Tasselli'},
+{c:'C01338',d:'RONDELLA IN NYLON TDX 140',u:'cad',p:7.85,g:'Tasselli'},
+{c:'C02026',d:'RONDELLA VT 90',u:'cad',p:0.73,g:'Tasselli'},
+{c:'C02027',d:'RONDELLA SBL 140 plus',u:'cad',p:1.27,g:'Tasselli'},
+// ─── PROFILI ───
+{c:'C00110',d:'Profilo partenza alluminio 2,5m SP.30mm',u:'pz',p:8.46,g:'Profili'},
+{c:'C00159',d:'Profilo partenza alluminio 2,5m SP.40mm',u:'pz',p:9.40,g:'Profili'},
+{c:'C00129',d:'Profilo partenza alluminio 2,5m SP.50mm',u:'pz',p:10.11,g:'Profili'},
+{c:'C00098',d:'Profilo partenza alluminio 2,5m SP.60mm',u:'pz',p:11.07,g:'Profili'},
+{c:'C00187',d:'Profilo partenza alluminio 2,5m SP.70mm',u:'pz',p:12.15,g:'Profili'},
+{c:'C00102',d:'Profilo partenza alluminio 2,5m SP.80mm',u:'pz',p:13.12,g:'Profili'},
+{c:'C00174',d:'Profilo partenza alluminio 2,5m SP.90mm',u:'pz',p:15.33,g:'Profili'},
+{c:'C00089',d:'Profilo partenza alluminio 2,5m SP.100mm',u:'pz',p:15.33,g:'Profili'},
+{c:'C00117',d:'Profilo partenza alluminio 2,5m SP.120mm',u:'pz',p:17.23,g:'Profili'},
+{c:'C00171',d:'Profilo partenza alluminio 2,5m SP.140mm',u:'pz',p:20.20,g:'Profili'},
+{c:'C00198',d:'Profilo partenza alluminio 2,5m SP.160mm',u:'pz',p:22.15,g:'Profili'},
+{c:'C01081',d:'Profilo partenza alluminio 2,5m SP.180mm',u:'pz',p:24.35,g:'Profili'},
+{c:'C00925',d:'Profilo partenza alluminio 2,5m SP.200mm',u:'pz',p:26.28,g:'Profili'},
+{c:'C00096',d:'Profilo chiusura sottofinestra 2,5m SP.30mm',u:'pz',p:20.61,g:'Profili'},
+{c:'C00105',d:'Profilo chiusura sottofinestra 2,5m SP.40mm',u:'pz',p:28.44,g:'Profili'},
+{c:'C00183',d:'Profilo chiusura sottofinestra 2,5m SP.50mm',u:'pz',p:30.77,g:'Profili'},
+{c:'C00066',d:'Profilo chiusura sottofinestra 2,5m SP.60mm',u:'pz',p:33.02,g:'Profili'},
+{c:'C00175',d:'Profilo chiusura sottofinestra 2,5m SP.80mm',u:'pz',p:37.56,g:'Profili'},
+{c:'C00168',d:'Profilo chiusura sottofinestra 2,5m SP.100mm',u:'pz',p:42.11,g:'Profili'},
+{c:'C01915',d:'Profilo rompigoccia per finestre con rete 2,5m',u:'pz',p:5.58,g:'Profili'},
+{c:'C00082',d:'Profilo rompigoccia con gocciolatoio a vista 2,5m',u:'pz',p:6.33,g:'Profili'},
+// ─── PARASPIGOLI ───
+{c:'C00065',d:'Paraspigolo con rete PVC 2,5m (120x0,80mm)',u:'pz',p:2.73,g:'Paraspigoli'},
+{c:'C01914',d:'Paraspigolo con rete PVC 2,5m (150x100mm)',u:'pz',p:3.13,g:'Paraspigoli'},
+// ─── LISTINO 6.0 – licata.coat ───
+{c:'ACRIL-PRIMER-LT1',d:'ACRIL PRIMER LT 1',u:'Lt',p:9.63,g:'licata.coat'},
+{c:'ACRIL-PRIMER-LT5',d:'ACRIL PRIMER LT 5',u:'Lt',p:7.88,g:'licata.coat'},
+{c:'ACRIL-PRIMER-PLUS-LT1',d:'ACRIL PRIMER PLUS LT 1',u:'Lt',p:8.54,g:'licata.coat'},
+{c:'ACRIL-PRIMER-PLUS-LT5',d:'ACRIL PRIMER PLUS LT 5',u:'Lt',p:6.96,g:'licata.coat'},
+{c:'ACRIL-PRIMER-PLUS-LT10',d:'ACRIL PRIMER PLUS LT 10',u:'Lt',p:6.30,g:'licata.coat'},
+{c:'ADDITIVO-PR-250ML',d:'ADDITIVO PR 250 ML',u:'pz',p:12.17,g:'licata.coat'},
+{c:'AGGRAPPANTE-LG-KG5',d:'AGGRAPPANTE LG KG 5',u:'Kg',p:6.38,g:'licata.coat'},
+{c:'ELASTO-PAINT-B-KG20',d:'ELASTO PAINT BIANCO KG 20',u:'Kg',p:8.98,g:'licata.coat'},
+{c:'ELASTO-PAINT-I-KG19',d:'ELASTO PAINT INTERMEDIO KG 19',u:'Kg',p:8.98,g:'licata.coat'},
+{c:'ELASTO-PAINT-N-KG18',d:'ELASTO PAINT NEUTRO KG 18',u:'Kg',p:8.98,g:'licata.coat'},
+{c:'ELASTO-PRIMER-LT10',d:'ELASTO PRIMER LT 10',u:'Lt',p:11.53,g:'licata.coat'},
+{c:'ELASTO-RENDER-B12-KG20',d:'ELASTO RENDER RIGIRATO 1,2 MM BIANCO KG 20',u:'Kg',p:5.71,g:'licata.coat'},
+{c:'ELASTO-RENDER-N12-KG20',d:'ELASTO RENDER RIGIRATO 1,2 MM NEUTRO KG 20',u:'Kg',p:5.71,g:'licata.coat'},
+{c:'ELASTO-RENDER-B15-KG20',d:'ELASTO RENDER RIGIRATO 1,5 MM BIANCO KG 20',u:'Kg',p:5.71,g:'licata.coat'},
+{c:'ELASTO-RENDER-N15-KG20',d:'ELASTO RENDER RIGIRATO 1,5 MM NEUTRO KG 20',u:'Kg',p:5.71,g:'licata.coat'},
+{c:'ISOLANTE-LG-B-KG5',d:'ISOLANTE LG BIANCO KG 5',u:'Kg',p:6.12,g:'licata.coat'},
+{c:'KALANIT-QUARZO-I-KG19',d:'KALANIT QUARZO INTERMEDIO KG 19',u:'Kg',p:5.24,g:'licata.coat'},
+{c:'KALANIT-QUARZO-N-KG18',d:'KALANIT QUARZO NEUTRO KG 18',u:'Kg',p:5.19,g:'licata.coat'},
+{c:'LERICI-12-N-KG25',d:'LERICI RIGIRATO 1,2 MM NEUTRO KG 25',u:'Kg',p:3.01,g:'licata.coat'},
+{c:'LERICI-12-N-KG5',d:'LERICI RIGIRATO 1,2 MM NEUTRO KG 5',u:'Kg',p:4.83,g:'licata.coat'},
+{c:'LERICI-15-N-KG25',d:'LERICI RIGIRATO 1,5 MM NEUTRO KG 25',u:'Kg',p:3.01,g:'licata.coat'},
+{c:'VITREA-QUARZO-B-KG5',d:'VITREA QUARZO BIANCO KG 5',u:'Kg',p:7.70,g:'licata.coat'},
+{c:'VITREA-QUARZO-I-KG475',d:'VITREA QUARZO INTERMEDIO KG 4,75',u:'Kg',p:7.28,g:'licata.coat'},
+{c:'VITREA-QUARZO-N-KG445',d:'VITREA QUARZO NEUTRO KG 4,45',u:'Kg',p:7.28,g:'licata.coat'},
+{c:'UNIFORMANTE-LG-KG20',d:'UNIFORMANTE LG KG 20',u:'Kg',p:6.38,g:'licata.coat'},
+{c:'PRIMER-OCRAM-KG20',d:'PRIMER OCRAM BIANCO KG 20',u:'Kg',p:5.87,g:'licata.coat'},
+{c:'NANO-PRIMER-LT1',d:'NANO PRIMER LT 1',u:'Lt',p:17.85,g:'licata.coat'},
+{c:'NANO-PRIMER-LT5',d:'NANO PRIMER LT 5',u:'Lt',p:14.28,g:'licata.coat'},
+{c:'NANOSIL-PRIMER-LT5',d:'NANOSIL PRIMER LT 5',u:'Lt',p:8.18,g:'licata.coat'},
+{c:'SILSAN-PAINT-I-KG19',d:'SILSAN PAINT INTERMEDIO KG 19',u:'Kg',p:6.76,g:'licata.coat'},
+{c:'SILSAN-PAINT-N-KG18',d:'SILSAN PAINT NEUTRO KG 18',u:'Kg',p:6.76,g:'licata.coat'},
+{c:'BESTEN-AS-N12-KG25',d:'BESTEN PUTZ ACRIL SILOSSANICO NEUTRO 1,2 MM KG 25',u:'Kg',p:3.53,g:'licata.coat'},
+{c:'BESTEN-AS-N15-KG25',d:'BESTEN PUTZ ACRIL SILOSSANICO NEUTRO 1,5 MM KG 25',u:'Kg',p:3.53,g:'licata.coat'},
+{c:'BESTEN-AS-B12-KG1',d:'BESTEN PUTZ ACRIL SILOSSANICO BIANCO 1,2 MM KG 1 (scat. 6)',u:'Kg',p:7.51,g:'licata.coat'},
+{c:'BESTEN-AS-B12-KG5',d:'BESTEN PUTZ ACRIL SILOSSANICO BIANCO 1,2 MM KG 5 (scat. 2)',u:'Kg',p:5.45,g:'licata.coat'},
+{c:'BESTEN-AS-B15-KG1',d:'BESTEN PUTZ ACRIL SILOSSANICO BIANCO 1,5 MM KG 1 (scat. 6)',u:'Kg',p:7.51,g:'licata.coat'},
+{c:'BESTEN-AS-B15-KG5-2',d:'BESTEN PUTZ ACRIL SILOSSANICO BIANCO 1,5 MM KG 5 (scat. 2)',u:'Kg',p:5.45,g:'licata.coat'},
+{c:'BESTEN-AS-N12-KG1',d:'BESTEN PUTZ ACRIL SILOSSANICO NEUTRO 1,2 MM KG 1 (scat. 6)',u:'Kg',p:7.51,g:'licata.coat'},
+{c:'BESTEN-AS-N12-KG5',d:'BESTEN PUTZ ACRIL SILOSSANICO NEUTRO 1,2 MM KG 5 (scat. 2)',u:'Kg',p:5.45,g:'licata.coat'},
+{c:'BESTEN-AS-N15-KG1',d:'BESTEN PUTZ ACRIL SILOSSANICO NEUTRO 1,5 MM KG 1 (scat. 6)',u:'Kg',p:7.51,g:'licata.coat'},
+{c:'BESTEN-AS-N15-KG5',d:'BESTEN PUTZ ACRIL SILOSSANICO NEUTRO 1,5 MM KG 5 (scat. 2)',u:'Kg',p:5.45,g:'licata.coat'},
+{c:'BESTEN-ACRIL-B12-KG1',d:'BESTEN PUTZ ACRILICO BIANCO 1,2 MM KG 1 (scat. 6)',u:'Kg',p:7.12,g:'licata.coat'},
+{c:'BESTEN-ACRIL-B12-KG5',d:'BESTEN PUTZ ACRILICO BIANCO 1,2 MM KG 5 (scat. 2)',u:'Kg',p:5.11,g:'licata.coat'},
+{c:'BESTEN-ACRIL-B15-KG1',d:'BESTEN PUTZ ACRILICO BIANCO 1,5 MM KG 1 (scat. 6)',u:'Kg',p:7.12,g:'licata.coat'},
+{c:'BESTEN-ACRIL-B15-KG5',d:'BESTEN PUTZ ACRILICO BIANCO 1,5 MM KG 5 (scat. 2)',u:'Kg',p:5.11,g:'licata.coat'},
+{c:'BESTEN-ACRIL-N12-KG1',d:'BESTEN PUTZ ACRILICO NEUTRO 1,2 MM KG 1 (scat. 6)',u:'Kg',p:7.12,g:'licata.coat'},
+{c:'BESTEN-ACRIL-N12-KG5',d:'BESTEN PUTZ ACRILICO NEUTRO 1,2 MM KG 5 (scat. 2)',u:'Kg',p:5.11,g:'licata.coat'},
+{c:'BESTEN-ACRIL-N15-KG1',d:'BESTEN PUTZ ACRILICO NEUTRO 1,5 MM KG 1 (scat. 6)',u:'Kg',p:7.12,g:'licata.coat'},
+{c:'BESTEN-ACRIL-N15-KG5',d:'BESTEN PUTZ ACRILICO NEUTRO 1,5 MM KG 5 (scat. 2)',u:'Kg',p:4.83,g:'licata.coat'},
+{c:'LERICI-B12-KG1',d:'LERICI 1,2 MM RIGIRATO BIANCO KG 1 (scat. 6)',u:'Kg',p:6.80,g:'licata.coat'},
+{c:'LERICI-B12-KG5',d:'LERICI 1,2 MM RIGIRATO BIANCO KG 5 (scat. 2)',u:'Kg',p:4.83,g:'licata.coat'},
+{c:'LERICI-N12-KG1',d:'LERICI 1,2 MM RIGIRATO NEUTRO KG 1 (scat. 6)',u:'Kg',p:6.80,g:'licata.coat'},
+{c:'LERICI-N12-KG5',d:'LERICI 1,2 MM RIGIRATO NEUTRO KG 5 (scat. 2)',u:'Kg',p:4.83,g:'licata.coat'},
+{c:'LERICI-B15-KG1',d:'LERICI 1,5 MM RIGIRATO BIANCO KG 1 (scat. 6)',u:'Kg',p:6.80,g:'licata.coat'},
+{c:'LERICI-B15-KG5',d:'LERICI 1,5 MM RIGIRATO BIANCO KG 5 (scat. 2)',u:'Kg',p:4.83,g:'licata.coat'},
+{c:'LERICI-N15-KG1',d:'LERICI 1,5 MM RIGIRATO NEUTRO KG 1 (scat. 6)',u:'Kg',p:6.80,g:'licata.coat'},
+{c:'SILOXAN-PAINT-B-KG1',d:'SILOXAN PAINT BIANCO KG 1 (scat. 6)',u:'Kg',p:10.00,g:'licata.coat'},
+{c:'SILOXAN-PAINT-I-KG1',d:'SILOXAN PAINT INTERMEDIO KG 1 (scat. 6)',u:'Kg',p:9.62,g:'licata.coat'},
+{c:'SILOXAN-PAINT-N-KG1',d:'SILOXAN PAINT NEUTRO KG 1 (scat. 6)',u:'Kg',p:9.62,g:'licata.coat'},
+{c:'VITREA-QUARZO-B-KG1',d:'VITREA QUARZO BIANCO KG 1 (scat. 6)',u:'Kg',p:8.40,g:'licata.coat'},
+{c:'VITREA-QUARZO-I-KG095',d:'VITREA QUARZO INTERMEDIO KG 0,95 (scat. 6)',u:'Kg',p:8.12,g:'licata.coat'},
+{c:'VITREA-QUARZO-N-KG09',d:'VITREA QUARZO NEUTRO KG 0,9 (scat. 6)',u:'Kg',p:8.12,g:'licata.coat'},
+{c:'AGGRAPPANTE-LG-KG20',d:'AGGRAPPANTE LG KG 20',u:'Kg',p:4.20,g:'licata.coat'},
+{c:'BESTEN-ACRIL-B12-KG25',d:'BESTEN PUTZ ACRILICO BIANCO 1,2 MM KG 25',u:'Kg',p:3.28,g:'licata.coat'},
+{c:'BESTEN-ACRIL-B15-KG25',d:'BESTEN PUTZ ACRILICO BIANCO 1,5 MM KG 25',u:'Kg',p:3.28,g:'licata.coat'},
+{c:'BESTEN-ACRIL-N12-KG25',d:'BESTEN PUTZ ACRILICO NEUTRO 1,2 MM KG 25',u:'Kg',p:3.28,g:'licata.coat'},
+{c:'ISOLANTE-LG-B-KG20',d:'ISOLANTE LG BIANCO KG 20',u:'Kg',p:4.98,g:'licata.coat'},
+{c:'KALANIT-QUARZO-B-KG20',d:'KALANIT QUARZO BIANCO KG 20',u:'Kg',p:5.91,g:'licata.coat'},
+{c:'LERICI-12-B-KG25',d:'LERICI RIGIRATO 1,2 MM BIANCO KG 25',u:'Kg',p:3.07,g:'licata.coat'},
+{c:'LERICI-15-B-KG25',d:'LERICI RIGIRATO 1,5 MM BIANCO KG 25',u:'Kg',p:3.07,g:'licata.coat'},
+{c:'VITREA-QUARZO-B-KG20',d:'VITREA QUARZO BIANCO KG 20',u:'Kg',p:6.94,g:'licata.coat'},
+{c:'VITREA-QUARZO-I-KG19',d:'VITREA QUARZO INTERMEDIO KG 19',u:'Kg',p:6.66,g:'licata.coat'},
+{c:'VITREA-QUARZO-N-KG18',d:'VITREA QUARZO NEUTRO KG 18',u:'Kg',p:6.66,g:'licata.coat'},
+{c:'RASO-ARM-SCUDO-KG25',d:'RASO ARM SCUDO 1,2 MM KG 25',u:'Kg',p:4.07,g:'licata.coat'},
+{c:'BESTEN-SILOS-B12-KG25',d:'BESTEN PUTZ SILOSSANICO BIANCO 1,2 MM KG 25',u:'Kg',p:4.20,g:'licata.coat'},
+{c:'BESTEN-SILOS-B15-KG25',d:'BESTEN PUTZ SILOSSANICO BIANCO 1,5 MM KG 25',u:'Kg',p:4.20,g:'licata.coat'},
+{c:'NANO-PRIMER-LT10',d:'NANO PRIMER LT 10',u:'Lt',p:12.75,g:'licata.coat'},
+{c:'SILOXAN-COLOR-B12-KG25',d:'SILOXAN COLOR 1,2 MM RIGIRATO BIANCO KG 25',u:'Kg',p:4.47,g:'licata.coat'},
+{c:'SILOXAN-COLOR-B15-KG25',d:'SILOXAN COLOR 1,5 MM RIGIRATO BIANCO KG 25',u:'Kg',p:4.47,g:'licata.coat'},
+{c:'SILOXAN-LG-B-KG20',d:'SILOXAN LG BIANCO KG 20',u:'Kg',p:6.12,g:'licata.coat'},
+{c:'SILOXAN-PAINT-B-KG20',d:'SILOXAN PAINT BIANCO KG 20',u:'Kg',p:8.67,g:'licata.coat'},
+{c:'SILOXAN-PAINT-I-KG19',d:'SILOXAN PAINT INTERMEDIO KG 19',u:'Kg',p:8.29,g:'licata.coat'},
+{c:'SILOXAN-PAINT-N-KG18',d:'SILOXAN PAINT NEUTRO KG 18',u:'Kg',p:8.29,g:'licata.coat'},
+{c:'SILOXAN-PRIMER-LT10',d:'SILOXAN PRIMER LT 10',u:'Lt',p:12.12,g:'licata.coat'},
+{c:'BESTEN-AS-B12-KG25',d:'BESTEN PUTZ ACRIL SILOSSANICO BIANCO 1,2 MM KG 25',u:'Kg',p:3.53,g:'licata.coat'},
+{c:'BESTEN-AS-B15-KG25',d:'BESTEN PUTZ ACRIL SILOSSANICO BIANCO 1,5 MM KG 25',u:'Kg',p:3.53,g:'licata.coat'},
+{c:'BESTEN-SCUDO-AS-B15',d:'BESTEN PUTZ SCUDO ACRIL-SILOSSANICO BIANCO 1,5 MM KG 25',u:'Kg',p:4.58,g:'licata.coat'},
+{c:'SILSAN-COLOR-B12-KG25',d:'SILSAN COLOR 1,2 MM RIGIRATO BIANCO KG 25',u:'Kg',p:3.47,g:'licata.coat'},
+{c:'SILSAN-PAINT-B-KG20',d:'SILSAN PAINT BIANCO KG 20',u:'Kg',p:7.02,g:'licata.coat'},
+{c:'LICATASIL-12-B-KG25',d:'LICATASIL 1,2 MM RIGIRATO BIANCO KG 25',u:'Kg',p:3.75,g:'licata.coat'},
+{c:'LICATASIL-15-B-KG25',d:'LICATASIL 1,5 MM RIGIRATO BIANCO KG 25',u:'Kg',p:3.75,g:'licata.coat'},
+{c:'IDROSIL-EXTERIOR-KG20',d:'IDROSIL EXTERIOR SILICAT SOL BIANCO KG 20',u:'Kg',p:7.93,g:'licata.coat'},
+{c:'SIL-PRIMER-LT16',d:'SIL PRIMER LT 16',u:'Lt',p:6.76,g:'licata.coat'},
+{c:'RETE-FV-160',d:'LICATATHERM RETE IN FIBRA DI VETRO 160 g/m²',u:'m²',p:1.59,g:'licata.coat'},
+{c:'RETE-FV-220',d:'LICATATHERM RETE IN FIBRA DI VETRO 220 g/m²',u:'m²',p:2.90,g:'licata.coat'},
+// licata.paint
+{c:'ADDA-EXTRA-LT13',d:'ADDA EXTRA TRASPIRANTE ANTIMUFFA BIANCO LT 13',u:'Lt',p:5.42,g:'licata.paint'},
+{c:'ADIGE-EXTRA-LT13',d:'ADIGE EXTRA TRASPIRANTE BIANCO LT 13',u:'Lt',p:3.58,g:'licata.paint'},
+{c:'DORA-LAV-LT4',d:'DORA LAVABILE ANTIMUFFA BIANCO LT 4',u:'Lt',p:7.57,g:'licata.paint'},
+{c:'IMERA-SUPER-LT4',d:'IMERA SUPER LAVABILE ANTIMUFFA BIANCO LT 4',u:'Lt',p:9.88,g:'licata.paint'},
+{c:'SESIA-LAV-SILO-LT4',d:'SESIA LAVABILE SILOSSANICA ANTIMUFFA BIANCO LT 4',u:'Lt',p:13.99,g:'licata.paint'},
+{c:'GLOSSY-OPACO-B-LT4',d:'GLOSSY OPACO BIANCO LT 4',u:'Lt',p:12.88,g:'licata.paint'},
+{c:'GLOSSY-OPACO-N-LT10',d:'GLOSSY OPACO NEUTRO LT 10',u:'Lt',p:9.25,g:'licata.paint'},
+{c:'GLOSSY-OPACO-N-LT4',d:'GLOSSY OPACO NEUTRO LT 4',u:'Lt',p:10.25,g:'licata.paint'},
+{c:'ISOLANTE-LG-INT-KG20',d:'ISOLANTE LG INTERIOR BIANCO KG 20',u:'Kg',p:4.08,g:'licata.paint'},
+{c:'REGAL-ANTIM-LT4',d:'REGAL ANTIMUFFA TRASPIRANTE BIANCO LT 4',u:'Lt',p:7.90,g:'licata.paint'},
+{c:'SANUS-LT1',d:'SANUS LT 1 (SCATOLA DA 6 PZ)',u:'Lt',p:28.75,g:'licata.paint'},
+{c:'SANUS-LT20',d:'SANUS LT 20',u:'Lt',p:14.38,g:'licata.paint'},
+{c:'TIPO-L-B-LT4',d:'TIPO L BIANCO LT 4',u:'Lt',p:10.25,g:'licata.paint'},
+{c:'TIPO-L-I-LT4',d:'TIPO L INTERMEDIO LT 4',u:'Lt',p:8.75,g:'licata.paint'},
+{c:'TIPO-L-N-LT4',d:'TIPO L NEUTRO LT 4',u:'Lt',p:8.15,g:'licata.paint'},
+{c:'VIVICASA-B-LT4',d:'VIVICASA BIANCO LT 4',u:'Lt',p:6.90,g:'licata.paint'},
+{c:'VIVICASA-I-LT4',d:'VIVICASA INTERMEDIO LT 4',u:'Lt',p:6.90,g:'licata.paint'},
+{c:'VIVICASA-N-LT14',d:'VIVICASA NEUTRO LT 14',u:'Lt',p:6.17,g:'licata.paint'},
+{c:'VIVICASA-N-LT4',d:'VIVICASA NEUTRO LT 4',u:'Lt',p:6.90,g:'licata.paint'},
+{c:'IMERA-SUPER-LT13',d:'IMERA SUPER LAVABILE ANTIMUFFA BIANCO LT 13',u:'Lt',p:8.59,g:'licata.paint'},
+{c:'MAIRA-EXTRA-LT13',d:'MAIRA EXTRA TRASPIRANTE BIANCO LT 13',u:'Lt',p:4.63,g:'licata.paint'},
+{c:'SESIA-LAV-SILO-LT13',d:'SESIA LAVABILE SILOSSANICA ANTIMUFFA BIANCO LT 13',u:'Lt',p:12.17,g:'licata.paint'},
+{c:'ANTARES-PREM-LT14',d:'ANTARES PREMIUM LT 14',u:'Lt',p:8.50,g:'licata.paint'},
+{c:'GLOSSY-OPACO-B-LT10',d:'GLOSSY OPACO BIANCO LT 10',u:'Lt',p:11.88,g:'licata.paint'},
+{c:'REGAL-ANTIM-LT13',d:'REGAL ANTIMUFFA TRASPIRANTE BIANCO LT 13',u:'Lt',p:7.20,g:'licata.paint'},
+{c:'SANUS-LT10',d:'SANUS LT 10',u:'Lt',p:16.25,g:'licata.paint'},
+{c:'TIPO-L-B-LT14',d:'TIPO L BIANCO LT 14',u:'Lt',p:9.00,g:'licata.paint'},
+{c:'TIPO-L-I-LT14',d:'TIPO L INTERMEDIO LT 14',u:'Lt',p:7.50,g:'licata.paint'},
+{c:'TIPO-L-N-LT14',d:'TIPO L NEUTRO LT 14',u:'Lt',p:6.90,g:'licata.paint'},
+{c:'VIVICASA-B-LT14',d:'VIVICASA BIANCO LT 14',u:'Lt',p:6.17,g:'licata.paint'},
+{c:'VIVICASA-I-LT14',d:'VIVICASA INTERMEDIO LT 14',u:'Lt',p:6.17,g:'licata.paint'},
+{c:'MURAL-PLUS-KG20',d:'MURAL PLUS KG 20',u:'Kg',p:1.65,g:'licata.paint'},
+{c:'MIRA-THERMAL-LT14',d:'MIRA THERMAL BIANCO LT 14',u:'Lt',p:9.75,g:'licata.paint'},
+// licata.finish
+{c:'RASO-G-B-KG25',d:'RASO G BIANCO KG 25',u:'Kg',p:0.56,g:'licata.finish'},
+{c:'RASO-G-GR-KG25',d:'RASO G GRIGIO KG 25',u:'Kg',p:0.53,g:'licata.finish'},
+{c:'RASO-R140-B08-KG25',d:'RASO R 140 BIANCO 0,8 MM KG 25',u:'Kg',p:0.75,g:'licata.finish'},
+{c:'RASO-R140-B12-KG25',d:'RASO R 140 BIANCO 1,2 MM KG 25',u:'Kg',p:0.75,g:'licata.finish'},
+{c:'RASO-TOP1000-B-KG20',d:'RASO TOP 1000 BIANCO KG 20',u:'Kg',p:1.24,g:'licata.finish'},
+{c:'RASO-TOP800-B08-KG25',d:'RASO TOP 800 BIANCO 0,8 MM KG 25',u:'Kg',p:0.99,g:'licata.finish'},
+{c:'RASO-TOP800-B12-KG25',d:'RASO TOP 800 BIANCO 1,2 MM KG 25',u:'Kg',p:0.99,g:'licata.finish'},
+{c:'RASO-TOP800-GR08-KG25',d:'RASO TOP 800 GRIGIO 0,8 MM KG 25',u:'Kg',p:0.89,g:'licata.finish'},
+{c:'RASO-W160-B08-KG25',d:'RASO W 160 BIANCO 0,8 MM KG 25',u:'Kg',p:0.89,g:'licata.finish'},
+{c:'RASO-TX330-KG25',d:'RASO TX 330 KG 25',u:'Kg',p:0.72,g:'licata.finish'},
+// licata.floor
+{c:'FLEX-HM-B-KG25',d:'FLEX HM BIANCO C2TE KG 25',u:'Kg',p:0.93,g:'licata.floor'},
+{c:'FLEX-HM-GR-KG25',d:'FLEX HM GRIGIO C2TE KG 25',u:'Kg',p:0.90,g:'licata.floor'},
+{c:'FLEX-PLUS-B-KG25',d:'FLEX PLUS BIANCO C2TE KG 25',u:'Kg',p:1.01,g:'licata.floor'},
+{c:'FLEX-S1-B-KG25',d:'FLEX S1 BIANCO C2TE S1 KG 25',u:'Kg',p:1.07,g:'licata.floor'},
+{c:'FLOOR-K300-KG25',d:'FLOOR K300 KG 25',u:'Kg',p:1.17,g:'licata.floor'},
+{c:'FUGATOP-08-B',d:'FUGATOP 0-8 BIANCO (CF DA 3KG x 6 PZ)',u:'Kg',p:2.81,g:'licata.floor'},
+{c:'FUGATOP-08-GR',d:'FUGATOP 0-8 GRIGIO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-ANT',d:'FUGATOP 0-8 ANTRACITE (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-GRCEM',d:'FUGATOP 0-8 GRIGIO CEMENTO (CF DA 3KG x 6 PZ)',u:'Kg',p:2.75,g:'licata.floor'},
+{c:'FUGATOP-08-BEIGE',d:'FUGATOP 0-8 BEIGE (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-320-GR',d:'FUGATOP 3-20 GRIGIO PERLA (CF DA 3KG x 6 PZ)',u:'Kg',p:2.65,g:'licata.floor'},
+{c:'SUPER-S1-B-KG25',d:'SUPER S1 C2TE S1 BIANCO KG 25',u:'Kg',p:1.24,g:'licata.floor'},
+{c:'LICAPLAN-KG25',d:'LICAPLAN KG 25',u:'Kg',p:0.27,g:'licata.floor'},
+{c:'TILES-ECO-PRIMER-KG5',d:'TILES ECO PRIMER KG 5',u:'Kg',p:7.99,g:'licata.floor'},
+{c:'FLEX-PLUS-GR-KG25',d:'FLEX PLUS GRIGIO C2TE KG 25',u:'Kg',p:0.97,g:'licata.floor'},
+{c:'FLEX-S1-GR-KG25',d:'FLEX S1 GRIGIO C2TE S1 KG 25',u:'Kg',p:1.03,g:'licata.floor'},
+{c:'SUPER-S1-GR-KG25',d:'SUPER S1 C2TE S1 GRIGIO KG 25',u:'Kg',p:1.19,g:'licata.floor'},
+{c:'R600-KG25',d:'R 600 C1T KG 25',u:'Kg',p:0.60,g:'licata.floor'},
+{c:'R900-KG25',d:'R 900 C1T KG 25',u:'Kg',p:0.64,g:'licata.floor'},
+{c:'FUGATOP-08-NERO',d:'FUGATOP 0-8 NERO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-TORTORA',d:'FUGATOP 0-8 TORTORA (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-MARRONE',d:'FUGATOP 0-8 MARRONE (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-VANIGLIA',d:'FUGATOP 0-8 VANIGLIA (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-JASMIN',d:'FUGATOP 0-8 JASMIN (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-MANHATTAN',d:'FUGATOP 0-8 MANHATTAN (CF DA 3KG x 6 PZ)',u:'Kg',p:2.81,g:'licata.floor'},
+{c:'FUGATOP-08-BAHAMA',d:'FUGATOP 0-8 BAHAMA (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-CASTANO',d:'FUGATOP 0-8 CASTANO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-CIOCCOLATO',d:'FUGATOP 0-8 CIOCCOLATO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-CARAMELLO',d:'FUGATOP 0-8 CARAMELLO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-MANDORLA',d:'FUGATOP 0-8 MANDORLA (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-ARGENTO',d:'FUGATOP 0-8 ARGENTO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-08-ARGSCURO',d:'FUGATOP 0-8 ARGENTO SCURO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.52,g:'licata.floor'},
+{c:'FUGATOP-320-ARGSCURO',d:'FUGATOP 3-20 ARGENTO SCURO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.37,g:'licata.floor'},
+{c:'FUGATOP-320-NERO',d:'FUGATOP 3-20 NERO (CF DA 3KG x 6 PZ)',u:'Kg',p:3.37,g:'licata.floor'},
+{c:'FUGATOP-320-BEIGE',d:'FUGATOP 3-20 BEIGE (CF DA 3KG x 6 PZ)',u:'Kg',p:3.47,g:'licata.floor'},
+// Impermeabilizzanti
+{c:'HYDRO-BLOCK-45S-KG5',d:'HYDRO BLOCK 45S KG 5 (2 sachetti da 2,5 KG)',u:'Kg',p:5.63,g:'Impermeab.'},
+{c:'FLEX-TAPE-200-20MT',d:'FLEX TAPE 200 20 MT x 20 CM x 1 MM',u:'Mt',p:15.30,g:'Impermeab.'},
+{c:'LICALASTIC-150PU-B-KG25',d:'LICALASTIC 150 PU BIANCO 25 KG',u:'Kg',p:13.65,g:'Impermeab.'},
+{c:'LICALASTIC-150PU-B-KG6',d:'LICALASTIC 150 PU BIANCO 6 KG',u:'Kg',p:15.85,g:'Impermeab.'},
+{c:'LICALASTIC-150PU-GR-KG25',d:'LICALASTIC 150 PU GRIGIO 25 KG',u:'Kg',p:13.65,g:'Impermeab.'},
+{c:'LICALASTIC-150PU-GR-KG6',d:'LICALASTIC 150 PU GRIGIO 6 KG',u:'Kg',p:15.85,g:'Impermeab.'},
+{c:'LICALASTIC-ONE-B-KG5',d:'LICALASTIC ONE BIANCO KG 5',u:'Kg',p:10.88,g:'Impermeab.'},
+{c:'LICALASTIC-ONE-GR-KG5',d:'LICALASTIC ONE GRIGIO KG 5',u:'Kg',p:10.88,g:'Impermeab.'},
+{c:'LICALASTIC-ONE-R-KG20',d:'LICALASTIC ONE ROSSO KG 20',u:'Kg',p:9.63,g:'Impermeab.'},
+{c:'LICALASTIC-ONE-R-KG5',d:'LICALASTIC ONE ROSSO KG 5',u:'Kg',p:10.88,g:'Impermeab.'},
+{c:'LICALASTIC-SCUD-B-KG5',d:'LICALASTIC SCUD BIANCO KG 5',u:'Kg',p:12.51,g:'Impermeab.'},
+{c:'LICALASTIC-SCUD-GR-KG5',d:'LICALASTIC SCUD GRIGIO KG 5',u:'Kg',p:12.51,g:'Impermeab.'},
+{c:'LICALASTIC-SCUD-R-KG18',d:'LICALASTIC SCUD ROSSO KG 18',u:'Kg',p:10.99,g:'Impermeab.'},
+{c:'LICALASTIC-SCUD-R-KG5',d:'LICALASTIC SCUD ROSSO KG 5',u:'Kg',p:12.51,g:'Impermeab.'},
+{c:'LICALASTIC-SVART-KG5',d:'LICALASTIC SVART 5 KG',u:'Kg',p:11.88,g:'Impermeab.'},
+{c:'TEXTURE-2000-MQ',d:'TEXTURE 2000 50M x 100CM x 0,45MM',u:'m²',p:3.41,g:'Impermeab.'},
+{c:'TEXTURE-BAND-MT',d:'TEXTURE 2000 BANDELLA 50M x 20CM x 0,45MM',u:'Mt',p:1.00,g:'Impermeab.'},
+{c:'WATER-TEXTURE-MQ',d:'WATER TEXTURE TESSUTO NON TESSUTO BIANCO 50 MQ',u:'m²',p:2.91,g:'Impermeab.'},
+{c:'HYDRO-MONOELASTO-KG20',d:'HYDRO MONOELASTO 100 KG 20',u:'Kg',p:4.00,g:'Impermeab.'},
+{c:'HYDRO-STAR-KG20',d:'HYDRO STAR KG 20',u:'Kg',p:4.85,g:'Impermeab.'},
+{c:'LICA-BAND-BTS-MT20',d:'LICA BAND BTS 100 MT 20',u:'Mt',p:4.38,g:'Impermeab.'},
+{c:'LICA-BAND-RL12-MT10',d:'LICA BAND RL 12 MT 10',u:'Mt',p:5.50,g:'Impermeab.'},
+{c:'LICA-PRIMER-440',d:'LICA PRIMER 440 A+B 3+1 KG',u:'Kg',p:28.40,g:'Impermeab.'},
+{c:'LICA-PRIMER-600',d:'LICA PRIMER 600 LT 4',u:'Lt',p:26.20,g:'Impermeab.'},
+{c:'LICALASTIC-140-KG5',d:'LICALASTIC 140 FIBRO FLEX 5 KG',u:'Kg',p:6.39,g:'Impermeab.'},
+{c:'LICALASTIC-140-KG20',d:'LICALASTIC 140 FIBRO FLEX 20 KG',u:'Kg',p:5.55,g:'Impermeab.'},
+{c:'LICALASTIC-ONE-B-KG20',d:'LICALASTIC ONE BIANCO KG 20',u:'Kg',p:9.63,g:'Impermeab.'},
+{c:'LICALASTIC-ONE-GR-KG20',d:'LICALASTIC ONE GRIGIO KG 20',u:'Kg',p:9.63,g:'Impermeab.'},
+{c:'LICALASTIC-SCUD-B-KG18',d:'LICALASTIC SCUD BIANCO KG 18',u:'Kg',p:10.99,g:'Impermeab.'},
+{c:'LICALASTIC-SCUD-GR-KG18',d:'LICALASTIC SCUD GRIGIO KG 18',u:'Kg',p:10.99,g:'Impermeab.'},
+{c:'LICALASTIC-SVART-KG20',d:'LICALASTIC SVART 20 KG',u:'Kg',p:10.34,g:'Impermeab.'},
+{c:'HYDRO-OSMO-K-KG25',d:'HYDRO OSMO K GRIGIO 25 KG',u:'Kg',p:1.36,g:'Impermeab.'},
+// licata.repair
+{c:'REPAIR-200SR-KG25',d:'REPAIR 200 SR KG 25',u:'Kg',p:0.87,g:'licata.repair'},
+{c:'REPAIR-250N-KG25',d:'REPAIR 250 N KG 25',u:'Kg',p:0.87,g:'licata.repair'},
+{c:'REPAIR-250R-KG25',d:'REPAIR 250 R KG 25',u:'Kg',p:1.12,g:'licata.repair'},
+{c:'REPAIR-400C-KG25',d:'REPAIR 400 C KG 25',u:'Kg',p:1.25,g:'licata.repair'},
+{c:'REPAIR-450-KG25',d:'REPAIR 450 KG 25',u:'Kg',p:0.94,g:'licata.repair'},
+{c:'REPAIR-540R-N-KG25',d:'REPAIR 540 R NERO KG 25',u:'Kg',p:1.50,g:'licata.repair'},
+{c:'BETONFIP-PASSIV-4X5KG',d:'BETONFIP PASSIVANTE 4 PZ DA 5 KG',u:'Kg',p:5.71,g:'licata.repair'},
+// Reinforced CRM STD aggiuntivi
+{c:'LICATA-CRM-NET99',d:'LICATA CRM NET99 (2 ROTOLI PER PALLET)',u:'m²',p:16.41,g:'Reinforced'},
+{c:'LICATA-CRM-CORNER33-3',d:'LICATA CRM CORNER 33-3 25x25x105 (scat. 40 pz)',u:'pz',p:33.84,g:'Reinforced'},
+{c:'LICATA-CRM-CORNER33-4',d:'LICATA CRM CORNER 33-4 25x25x210 (scat. 40 pz)',u:'pz',p:82.92,g:'Reinforced'},
+{c:'LICATA-CRM-CORNER66-3',d:'LICATA CRM CORNER 66-3 25x25x105 (scat. 40 pz)',u:'pz',p:20.77,g:'Reinforced'},
+{c:'LICATA-CRM-CORNER80',d:'LICATA CRM CORNER 80 (CF DA 10 PZ)',u:'pz',p:55.00,g:'Reinforced'},
+{c:'LICATA-CRM-STOP',d:'LICATA CRM STOP (CF DA 200 PZ)',u:'pz',p:1.30,g:'Reinforced'},
+{c:'LICATA-CRM-S8-20',d:'LICATA CRM CONNECTOR S8 20 (SCAT. 100 PZ)',u:'pz',p:4.03,g:'Reinforced'},
+{c:'LICATA-CRM-S8-40',d:'LICATA CRM CONNECTOR S8 40 (SCAT. 100 PZ)',u:'pz',p:4.55,g:'Reinforced'},
+{c:'LICATA-CRM-G6-50M',d:'LICATA CONNECTOR G6 (BOBINA DA 50 M)',u:'pz',p:4.08,g:'Reinforced'},
+{c:'LICATA-CRM-G8-50M',d:'LICATA CONNECTOR G8 (BOBINA DA 50 M)',u:'pz',p:5.11,g:'Reinforced'},
+{c:'LICATA-CRM-FIX6',d:'LICATA CONNECTOR FIX6 (SCAT. DA 100 PZ)',u:'pz',p:1.06,g:'Reinforced'},
+{c:'LICATA-CRM-FIX8',d:'LICATA CONNECTOR FIX8 (SCAT. DA 100 PZ)',u:'pz',p:1.06,g:'Reinforced'},
+{c:'LICATALIFE-BRICK-260',d:'LicaLife FIX BRICK 260',u:'pz',p:6.87,g:'Reinforced'},
+{c:'LICATALIFE-BRICK-300',d:'LicaLife FIX BRICK 300',u:'pz',p:8.25,g:'Reinforced'},
+{c:'LICATALIFE-FIX-CLS80',d:'LicaLife FIX CLS 80',u:'pz',p:2.86,g:'Reinforced'},
+{c:'LICATALIFE-FIX-CLS120',d:'LicaLife FIX CLS 120',u:'pz',p:3.57,g:'Reinforced'},
+{c:'LICATA-EL-4-304',d:'Licata EL CONNECTOR 4,5 304',u:'Mt',p:13.55,g:'Reinforced'},
+{c:'LICATA-EL-4-316',d:'Licata EL CONNECTOR 4,5 316',u:'Mt',p:14.30,g:'Reinforced'},
+{c:'LICATA-EL-6-316',d:'Licata EL CONNECTOR 6 316',u:'Mt',p:15.89,g:'Reinforced'},
+{c:'LICATA-EL-8-316',d:'Licata EL CONNECTOR 8 316',u:'Mt',p:16.59,g:'Reinforced'},
+{c:'LICATA-EL-10-316',d:'Licata EL CONNECTOR 10 316',u:'Mt',p:19.22,g:'Reinforced'},
+{c:'LICATA-EL-12-316',d:'Licata EL CONNECTOR 12 316',u:'Mt',p:23.30,g:'Reinforced'},
+{c:'LICATA-EL-FIX8',d:'Licata EL FIX 8',u:'pz',p:1.31,g:'Reinforced'},
+{c:'LICATA-EL-FIX10',d:'Licata EL FIX 10',u:'pz',p:1.31,g:'Reinforced'},
+{c:'LICATA-EL-T-CONN8',d:'Licata EL T CONNECTOR 8',u:'pz',p:5.62,g:'Reinforced'},
+{c:'LICATA-EL-T-CONN10',d:'Licata EL T CONNECTOR 10',u:'pz',p:5.62,g:'Reinforced'},
+// CRM Malte
+{c:'ROMANA-INTONACO-CRM',d:'ROMANA INTONACO KG 25 (licata.reinforced)',u:'Kg',p:0.54,g:'Reinforced'},
+{c:'BETONFIP-SOLID-CRM',d:'BETONFIP SOLID M15 KG 25 (licata.reinforced)',u:'Kg',p:0.50,g:'Reinforced'},
+{c:'LICACEM-200-CRM',d:'LICACEM 200 KG 25 (licata.reinforced)',u:'Kg',p:0.24,g:'Reinforced'},
+{c:'LICACEM-FIBRO-CRM',d:'LICACEM FIBRO KG 25 (licata.reinforced)',u:'Kg',p:0.26,g:'Reinforced'},
+{c:'FINISH-PRO280-KG25',d:'FINISH PRO 280 KG 25',u:'Kg',p:1.42,g:'licata.repair'},
+// BetonFIP
+{c:'BETONFIP-PASSIV-KG5',d:'BETONFIP PASSIVANTE KG 5 (4 PEZZI)',u:'Kg',p:5.71,g:'BetonFIP'},
+{c:'BETONFIP-LATTICE-KG5',d:'BETONFIP LATTICE KG 5',u:'Kg',p:8.24,g:'BetonFIP'},
+{c:'BETONFIP-TIXO-POL-2K',d:'BETONFIP TIXO POLIMER 2K COMP.A 25KG + COMP.B 5KG',u:'Kg',p:1.53,g:'BetonFIP'},
+{c:'BETONFIP-GHIAINO-KG25',d:'BETONFIP GHIAINO KG 25 6-10 mm',u:'Kg',p:0.27,g:'BetonFIP'},
+{c:'BETONFIP-GHIAIA-KG25',d:'BETONFIP GHIAIA KG 25 6-15mm',u:'Kg',p:0.28,g:'BetonFIP'},
+{c:'BETONFIP-LEGANTE-KG20',d:'BETONFIP LEGANTE KG 20',u:'Kg',p:1.02,g:'BetonFIP'},
+{c:'BETONFIP-LEGANTE-F-KG20',d:'BETONFIP LEGANTE F KG 20',u:'Kg',p:1.31,g:'BetonFIP'},
+{c:'BETONFIP-WP600-KG25',d:'BETONFIP WP 600 KG 25',u:'Kg',p:0.00,g:'BetonFIP'},
+{c:'BETONFIP-FLUID-KG25',d:'BETONFIP FLUID KG 25',u:'Kg',p:0.88,g:'BetonFIP'},
+{c:'BETONFIP-FLUID-F-KG25',d:'BETONFIP FLUID F KG 25',u:'Kg',p:0.95,g:'BetonFIP'},
+{c:'BETONFIP-FLUID-RF-KG25',d:'BETONFIP FLUID REINFORCED KG 25',u:'Kg',p:1.12,g:'BetonFIP'},
+{c:'BETONFIP-LATTICE-KG25',d:'BETONFIP LATTICE KG 25',u:'Kg',p:7.88,g:'BetonFIP'},
+{c:'BETONFIP-RAPID-FLUID',d:'BETONFIP RAPID FLUID 25 KG',u:'Kg',p:1.53,g:'BetonFIP'},
+{c:'BETONFIP-RAPID-RF',d:'BETONFIP RAPID REINFORCED 25 KG',u:'Kg',p:1.89,g:'BetonFIP'},
+{c:'BETONFIP-RASANTE-MONO',d:'BETONFIP RASANTE MONO R3 KG 25',u:'Kg',p:1.02,g:'BetonFIP'},
+{c:'BETONFIP-RASANTE-AS2K',d:'BETONFIP RASANTE AS 2K COMP.A 25KG + COMP.B 5KG',u:'Kg',p:1.41,g:'BetonFIP'},
+{c:'BETONFIP-SOLID-M15',d:'BETONFIP SOLID M15 KG 25',u:'Kg',p:0.50,g:'BetonFIP'},
+{c:'BETONFIP-TIXO-KG25',d:'BETONFIP TIXO KG 25',u:'Kg',p:0.75,g:'BetonFIP'},
+{c:'BETONFIP-TIXO-F-KG25',d:'BETONFIP TIXO F KG 25',u:'Kg',p:0.80,g:'BetonFIP'},
+{c:'BETONFIP-CORDOLO',d:'BETONFIP WP CORDOLO BENTONITICO 20X25',u:'Mt',p:11.40,g:'BetonFIP'},
+{c:'BETONFIP-CL-LT15',d:'BETONFIP CL 15 LT',u:'Lt',p:9.99,g:'BetonFIP'},
+// ResinFIP
+{c:'RESINFIP-F130-BHT',d:'RESINFIP EPOBOND F130 COMP.A 4KG + COMP.B HT 1KG',u:'Kg',p:18.95,g:'ResinFIP'},
+{c:'RESINFIP-F130-BRAPIDO',d:'RESINFIP EPOBOND F130 COMP.A 4KG + COMP.B RAPIDO 1KG',u:'Kg',p:19.98,g:'ResinFIP'},
+{c:'RESINFIP-F130-PICCOLO',d:'RESINFIP EPOBOND F130 COMP.A 1KG + COMP.B 0,25KG (scat. 6)',u:'Kg',p:20.93,g:'ResinFIP'},
+{c:'RESINFIP-F140-PICCOLO',d:'RESINFIP EPOBOND F140 COMP.A 0,95KG + COMP.B 0,25KG (scat. 6)',u:'Kg',p:34.63,g:'ResinFIP'},
+{c:'RESINFIP-T160-PICCOLO',d:'RESINFIP EPOBOND T160 COMP.A 1KG + COMP.B 0,375KG (scat. 6)',u:'Kg',p:20.93,g:'ResinFIP'},
+{c:'RESINFIP-FILLER-01-06',d:'RESINFIP FILLER 0,1-0,6 MM KG 25',u:'Kg',p:0.73,g:'ResinFIP'},
+{c:'RESINFIP-FILLER-07-12',d:'RESINFIP FILLER 0,7-1,2 MM KG 25',u:'Kg',p:0.73,g:'ResinFIP'},
+{c:'RESINFIP-FILLER-15-22',d:'RESINFIP FILLER 1,5-2,2 MM KG 25',u:'Kg',p:1.21,g:'ResinFIP'},
+{c:'RESINFIP-FONDO-D10',d:'RESINFIP FONDO GIUNTO D.10',u:'Mt',p:1.10,g:'ResinFIP'},
+{c:'RESINFIP-FONDO-D20',d:'RESINFIP FONDO GIUNTO D.20',u:'Mt',p:1.10,g:'ResinFIP'},
+{c:'RESINFIP-FONDO-D30',d:'RESINFIP FONDO GIUNTO D.30',u:'Mt',p:1.36,g:'ResinFIP'},
+{c:'RESINFIP-FONDO-D40',d:'RESINFIP FONDO GIUNTO D.40',u:'Mt',p:2.32,g:'ResinFIP'},
+{c:'RESINFIP-FONDO-D50',d:'RESINFIP FONDO GIUNTO D.50',u:'Mt',p:2.93,g:'ResinFIP'},
+{c:'RESINFIP-POLYBOND-F210',d:'RESINFIP POLYBOND F210 COMP.A 5KG + COMP.B 0,1KG',u:'Kg',p:15.14,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-361',d:'RESINFIP PRIMER 361 KG 23',u:'Kg',p:16.48,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-371',d:'RESINFIP PRIMER 371 COMP.A 7KG + COMP.B 2KG',u:'Kg',p:14.27,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-383',d:'RESINFIP PRIMER 383 COMP.A 2KG + COMP.B 1KG',u:'Kg',p:35.02,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-WP700',d:'RESINFIP PRIMER WP 700 (3 comp.)',u:'Kg',p:9.61,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-WP701',d:'RESINFIP PRIMER WP 701 KG 10',u:'Kg',p:13.00,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-WP704',d:'RESINFIP PRIMER WP 704 COMP.A 10KG + COMP.B 2,5KG',u:'Kg',p:7.40,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-WP771',d:'RESINFIP PRIMER WP 771 COMP.A 13,5KG + COMP.B 7,5KG',u:'Kg',p:20.19,g:'ResinFIP'},
+{c:'RESINFIP-SEAL-PRIMER500',d:'RESINFIP SEAL PRIMER 500 COMP.A 3KG + COMP.B 0,91KG',u:'Kg',p:26.95,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC350-6011',d:'RESINFIP COAT AC 350 EL RAL 6011 KG 25',u:'Kg',p:12.98,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC350-7022',d:'RESINFIP COAT AC 350 EL RAL 7022 KG 25',u:'Kg',p:12.98,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC350-7030',d:'RESINFIP COAT AC 350 EL RAL 7030 KG 25',u:'Kg',p:12.98,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC350-7035',d:'RESINFIP COAT AC 350 EL RAL 7035 KG 25',u:'Kg',p:12.98,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC350-7038',d:'RESINFIP COAT AC 350 EL RAL 7038 KG 25',u:'Kg',p:12.98,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC351-9010',d:'RESINFIP COAT AC 351 HT RAL 9010 KG 25',u:'Kg',p:14.21,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC351-7032',d:'RESINFIP COAT AC 351 RAL 7032 KG 25',u:'Kg',p:14.21,g:'ResinFIP'},
+{c:'RESINFIP-COAT-ACPU392',d:'RESINFIP COAT AC PU 392 RAL 7032 COMP.A 12,5KG + COMP.B 2KG',u:'Kg',p:40.50,g:'ResinFIP'},
+{c:'RESINFIP-COAT-E381-AZZ',d:'RESINFIP COAT E 381 COMP.A AZZURRO 4KG + COMP.B 1,4KG',u:'Kg',p:30.89,g:'ResinFIP'},
+{c:'RESINFIP-COAT-E381-GR',d:'RESINFIP COAT E 381 COMP.A GRIGIO 4KG + COMP.B 1,4KG',u:'Kg',p:28.91,g:'ResinFIP'},
+{c:'RESINFIP-COAT-EPU380',d:'RESINFIP COAT E-PU 380 EL GRIGIO A 4KG + B 0,8KG',u:'Kg',p:21.27,g:'ResinFIP'},
+{c:'RESINFIP-COAT-FPU390-R',d:'RESINFIP COAT F PU 390 RAL 3001 A 20KG + B 2KG',u:'Kg',p:57.00,g:'ResinFIP'},
+{c:'RESINFIP-COAT-FPU390-G',d:'RESINFIP COAT F PU 390 RAL 7032 A 20KG + B 2KG',u:'Kg',p:57.00,g:'ResinFIP'},
+{c:'RESINFIP-COAT-MC360-7040',d:'RESINFIP COAT MC 360 RAL 7040 KG 20',u:'Kg',p:16.48,g:'ResinFIP'},
+{c:'RESINFIP-COAT-MC360-7047',d:'RESINFIP COAT MC 360 RAL 7047 KG 20',u:'Kg',p:16.48,g:'ResinFIP'},
+{c:'RESINFIP-COAT-PU370-6011',d:'RESINFIP COAT PU 370 EL RAL 6011 COMP.A 12,8KG + B 1,3KG',u:'Kg',p:22.45,g:'ResinFIP'},
+{c:'RESINFIP-COAT-PU370-6021',d:'RESINFIP COAT PU 370 EL RAL 6021 COMP.A 12,8KG + B 1,3KG',u:'Kg',p:22.45,g:'ResinFIP'},
+{c:'RESINFIP-ERAIL-MALTA',d:'RESINFIP E-RAIL MALTA (3 comp.)',u:'Kg',p:5.67,g:'ResinFIP'},
+{c:'RESINFIP-ERAIL-PRIMER',d:'RESINFIP E-RAIL PRIMER COMP.A 2,4KG + COMP.B 0,8KG',u:'Kg',p:35.02,g:'ResinFIP'},
+{c:'RESINFIP-MALTA-EGR455',d:'RESINFIP MALTA EGR 455 COMP.A 4KG + COMP.B 1KG',u:'Kg',p:19.28,g:'ResinFIP'},
+{c:'RESINFIP-SOLVENTE-E',d:'RESINFIP SOLVENTE E KG 10',u:'Kg',p:14.42,g:'ResinFIP'},
+{c:'RESINFIP-SOLVENTE-PU',d:'RESINFIP SOLVENTE PU KG 10',u:'Kg',p:15.71,g:'ResinFIP'},
+{c:'RESINFIP-C100-1000ML',d:'RESINFIP EPOBOND C100 PLUS 1000 ML (scat. 6 pz)',u:'pz',p:76.60,g:'ResinFIP'},
+{c:'RESINFIP-F130-A4B1',d:'RESINFIP EPOBOND F 130 COMP.A 4KG + COMP.B 1KG',u:'Kg',p:18.54,g:'ResinFIP'},
+{c:'RESINFIP-F140-A38B1',d:'RESINFIP EPOBOND F 140 COMP.A 3,8KG + COMP.B 1KG',u:'Kg',p:44.55,g:'ResinFIP'},
+{c:'RESINFIP-T160-A4B15',d:'RESINFIP EPOBOND T 160 COMP.A 4KG + COMP.B 1,5KG',u:'Kg',p:19.85,g:'ResinFIP'},
+{c:'RESINFIP-T170-A4B1',d:'RESINFIP EPOBOND T 170 COMP.A 4KG + COMP.B 1KG',u:'Kg',p:15.86,g:'ResinFIP'},
+{c:'RESINFIP-MALTA-E440',d:'RESINFIP MALTA E 440 (3 comp.)',u:'Kg',p:5.67,g:'ResinFIP'},
+{c:'RESINFIP-MALTA-E445',d:'RESINFIP MALTA E 445 (3 comp.)',u:'Kg',p:6.23,g:'ResinFIP'},
+{c:'RESINFIP-MALTA-EC430',d:'RESINFIP MALTA EC 430 (3 comp.)',u:'Kg',p:5.15,g:'ResinFIP'},
+{c:'RESINFIP-PRIMER-352',d:'RESINFIP PRIMER 352 KG 20',u:'Kg',p:8.65,g:'ResinFIP'},
+{c:'RESINFIP-COAT-AC350',d:'RESINFIP COAT AC 350 EL RAL 7032 KG 25',u:'Kg',p:12.98,g:'ResinFIP'},
+{c:'RESINFIP-COAT-MC360',d:'RESINFIP COAT MC 360 RAL 7032 KG 20',u:'Kg',p:16.48,g:'ResinFIP'},
+{c:'RESINFIP-WP-EB710',d:'RESINFIP WP EB 710 COMP.A 18KG + COMP.B 2KG',u:'Kg',p:12.36,g:'ResinFIP'},
+{c:'RESINFIP-SEAL-PU550',d:'RESINFIP SEAL PU 550 COMP.A 1,5KG + COMP.B 3KG',u:'Kg',p:18.31,g:'ResinFIP'},
+{c:'RESINFIP-VEBOND-C120',d:'RESINFIP VEBOND C 120 300 ML (scat. 15 pz)',u:'pz',p:15.86,g:'ResinFIP'},
+// FiberFIP
+{c:'FIBERFIP-CARBON-CONN10',d:'FIBERFIP CARBON CONNECT 10 DIAMETRO 10',u:'Mt',p:22.11,g:'FiberFIP'},
+{c:'FIBERFIP-CARBON-CONN12',d:'FIBERFIP CARBON CONNECT 12',u:'Mt',p:19.50,g:'FiberFIP'},
+{c:'FIBERFIP-C-T230-H13',d:'FIBERFIP CARBON T-UNI 230 H 13 CM',u:'m²',p:60.00,g:'FiberFIP'},
+{c:'FIBERFIP-C-T230-H25',d:'FIBERFIP CARBON T-UNI 230 H 25 CM',u:'m²',p:60.00,g:'FiberFIP'},
+{c:'FIBERFIP-C-T230-H30',d:'FIBERFIP CARBON T-UNI 230 H 30 CM',u:'m²',p:60.00,g:'FiberFIP'},
+{c:'FIBERFIP-C-T230-H40',d:'FIBERFIP CARBON T-UNI 230 H 40 CM',u:'m²',p:60.00,g:'FiberFIP'},
+{c:'FIBERFIP-C-T230-H50',d:'FIBERFIP CARBON T-UNI 230 H 50 CM',u:'m²',p:60.00,g:'FiberFIP'},
+{c:'FIBERFIP-C-T390-H50',d:'FIBERFIP CARBON T-UNI 390 H 50 CM',u:'m²',p:184.17,g:'FiberFIP'},
+{c:'FIBERFIP-PRIMER-800',d:'FIBERFIP PRIMER 800 COMP.A 8,25KG + COMP.B 2,5KG',u:'Kg',p:18.00,g:'FiberFIP'},
+// Reinforced
+{c:'LICATA-CRM-CONN20',d:'LICATA CRM CONNECTOR 20 (CF 100 PZ)',u:'pz',p:3.25,g:'Reinforced'},
+{c:'LICATA-CRM-CONN30',d:'LICATA CRM CONNECTOR 30 (CF DA 100 PZ)',u:'pz',p:4.50,g:'Reinforced'},
+{c:'LICATA-CRM-CONN40',d:'LICATA CRM CONNECTOR 40 (CF 100 PZ)',u:'pz',p:5.50,g:'Reinforced'},
+{c:'LICATA-CRM-CONN60',d:'LICATA CRM CONNECTOR 60 (CF DA 100 PZ)',u:'pz',p:7.90,g:'Reinforced'},
+{c:'LICATA-CRM-NET48',d:'LICATA CRM NET 48 (ROTOLO 2X20M)',u:'m²',p:34.40,g:'Reinforced'},
+{c:'LICATA-CRM-NET80',d:'LICATA CRM NET 80 (ROTOLO 2X20M)',u:'m²',p:25.00,g:'Reinforced'},
+{c:'LICATA-CRM-NET120',d:'LICATA CRM NET 120 (ROTOLO 2X20M)',u:'m²',p:20.00,g:'Reinforced'},
+{c:'LICATA-CRM-NET33',d:'LICATA CRM NET33 (2 ROTOLI PER PALLET)',u:'m²',p:32.53,g:'Reinforced'},
+{c:'LICATA-CRM-NET66',d:'LICATA CRM NET66 (2 ROTOLI PER PALLET)',u:'m²',p:19.50,g:'Reinforced'},
+{c:'LICATA-CRM-S6-20',d:'LICATA CRM CONNECTOR S6 20 (SCAT. 100 PZ)',u:'pz',p:3.23,g:'Reinforced'},
+{c:'LICATA-CRM-S6-40',d:'LICATA CRM CONNECTOR S6 40 (SCAT. 100 PZ)',u:'pz',p:3.75,g:'Reinforced'},
+{c:'LICATALIFE-NET',d:'LicaLife NET',u:'m²',p:9.00,g:'Reinforced'},
+{c:'LICATALIFE-NET-PLUS',d:'LicaLife NET PLUS',u:'m²',p:13.00,g:'Reinforced'},
+{c:'LICATALIFE-NET-PRO',d:'LicaLife NET PRO',u:'m²',p:14.00,g:'Reinforced'},
+{c:'LICATALIFE-BRICK-180',d:'LicaLife FIX BRICK 180',u:'pz',p:3.02,g:'Reinforced'},
+{c:'LICATALIFE-BRICK-230',d:'LicaLife FIX BRICK 230',u:'pz',p:5.22,g:'Reinforced'},
+{c:'LICATA-EL-6-304',d:'Licata EL CONNECTOR 6 304',u:'Mt',p:14.06,g:'Reinforced'},
+{c:'LICATA-EL-8-304',d:'Licata EL CONNECTOR 8 304',u:'Mt',p:14.58,g:'Reinforced'},
+{c:'LICATA-EL-10-304',d:'Licata EL CONNECTOR 10 304',u:'Mt',p:17.48,g:'Reinforced'},
+{c:'LICATA-EL-12-304',d:'Licata EL CONNECTOR 12 304',u:'Mt',p:21.09,g:'Reinforced'},
+{c:'LICATA-FRCM-NET251',d:'Licata FRCM NET 251',u:'m²',p:13.50,g:'Reinforced'},
+{c:'LICATA-FRCM-NET380',d:'Licata FRCM NET 380',u:'m²',p:19.50,g:'Reinforced'},
+// Naturalis
+{c:'CALCE-NHL5-KG25',d:'CALCE IDRAULICA NATURALE NHL 5 KG 25',u:'Kg',p:1.00,g:'Naturalis'},
+{c:'NATURALIS-SOLID-M15',d:'NATURALIS SOLID M15 KG 25',u:'Kg',p:0.59,g:'Naturalis'},
+{c:'ROMANA-INTONACO-KG25',d:'ROMANA INTONACO KG 25',u:'Kg',p:0.54,g:'Naturalis'},
+{c:'ROMANA-SPECULAR-KG15',d:'ROMANA SPECULAR KG 15',u:'Kg',p:1.36,g:'Naturalis'},
+{c:'STORICA-DEUMID-KG25',d:'STORICA DEUMIDIFICANTE KG 25',u:'Kg',p:0.95,g:'Naturalis'},
+{c:'RASO-TOP-BIO-KG25',d:'RASO TOP BIO KG 25',u:'Kg',p:1.23,g:'Naturalis'},
+{c:'CONSOLIDANTE-SEA-LT10',d:'CONSOLIDANTE SEA LT 10',u:'Lt',p:49.73,g:'Naturalis'},
+{c:'HIDRO-REP-LT10',d:'HIDRO REP LT 10',u:'Lt',p:6.19,g:'Naturalis'},
+{c:'MOD-FIBRO-KG25',d:'MOD FIBRO KG 25',u:'Kg',p:1.23,g:'Naturalis'},
+// licata.additivi
+{c:'DISARM-100-LT10',d:'DISARM 100 LT 10',u:'Lt',p:11.96,g:'Naturalis'},
+{c:'DISARM-100-LT5',d:'DISARM 100 LT 5',u:'Lt',p:12.70,g:'Naturalis'},
+{c:'DISARM-200-LT10',d:'DISARM 200 LT 10',u:'Lt',p:12.35,g:'Naturalis'},
+{c:'DISARM-200-LT5',d:'DISARM 200 LT 5',u:'Lt',p:14.22,g:'Naturalis'},
+{c:'CONSOLIDANTE-SEA-LT1',d:'CONSOLIDANTE SEA LT 1',u:'Lt',p:57.38,g:'Naturalis'},
+{c:'CONSOLIDANTE-SEA-LT5',d:'CONSOLIDANTE SEA LT 5',u:'Lt',p:53.55,g:'Naturalis'},
+{c:'HIDRO-REP-LT1',d:'HIDRO REP LT 1',u:'Lt',p:8.93,g:'Naturalis'},
+{c:'HIDRO-REP-LT5',d:'HIDRO REP LT 5',u:'Lt',p:6.56,g:'Naturalis'},
+{c:'LICATA-INJECTO-310ML',d:'LICATA INJECTO GEL 310 ML (scat. 24 pz)',u:'pz',p:23.46,g:'Naturalis'},
+{c:'NEUTRAL-ANTISALE-200ML',d:'NEUTRAL ANTISALE 200 ML',u:'pz',p:31.50,g:'Naturalis'},
+{c:'COLORADO-SPUG-IDRA',d:'COLORADO SPUGNATO ALLA CALCE IDRATA 0,5-0,8 MM KG 25',u:'Kg',p:1.07,g:'Naturalis'},
+{c:'COLORADO-TINTA-CALCE',d:'COLORADO TINTA A CALCE BIANCO KG 20',u:'Kg',p:4.72,g:'Naturalis'},
+{c:'STIL-FACCIA-VISTA',d:'STIL FACCIA VISTA BIANCO KG 25',u:'Kg',p:0.80,g:'Naturalis'},
+{c:'STIL-ROMANA-BEIGE',d:'STIL ROMANA FACCIA VISTA BEIGE KG 25',u:'Kg',p:0.69,g:'Naturalis'},
+{c:'LICACEM-200-KG25',d:'LICACEM 200 KG 25',u:'Kg',p:0.24,g:'licata.cem'},
+{c:'LICACEM-BRICK-M5',d:'LICACEM BRICK M5 GRIGIO KG 25',u:'Kg',p:0.24,g:'licata.cem'},
+{c:'LICACEM-FIBRO-KG25',d:'LICACEM FIBRO KG 25',u:'Kg',p:0.26,g:'licata.cem'},
+{c:'ARTICA-KG20',d:'ARTICA KG 20',u:'Kg',p:1.04,g:'licata.cem'},
+{c:'TONAK-F05-KG25',d:'TONAK F 0,5 MM KG 25',u:'Kg',p:0.64,g:'licata.cem'},
+{c:'TONAK-F08-KG25',d:'TONAK F 0,8 MM KG 25',u:'Kg',p:0.66,g:'licata.cem'},
+// licata.colour
+{c:'PI-MAGENTA-MG-LT1',d:'PI MAGENTA MG LT 1',u:'Lt',p:167.38,g:'licata.colour'},
+{c:'PI-ORANGE-PASTEL-LT1',d:'PI ORANGE PASTEL OB LT 1',u:'Lt',p:257.50,g:'licata.colour'},
+{c:'PI-RED-SAT-LT1',d:'PI RED SATURED RB LT 1',u:'Lt',p:109.44,g:'licata.colour'},
+{c:'PI-VIOLET-RED-LT1',d:'PI VIOLET RED VO LT 1',u:'Lt',p:84.98,g:'licata.colour'},
+{c:'PI-EXT-RED-LT1',d:'PI EXTERIOR RED RE LT 1',u:'Lt',p:540.75,g:'licata.colour'},
+{c:'PI-BLUE-COBALT-LT1',d:'PI BLUE COBALT BC LT 1',u:'Lt',p:502.13,g:'licata.colour'},
+{c:'PI-BLUE-COBALT-LT1',d:'PI BLUE COBALT BC LT 1',u:'Lt',p:502.13,g:'licata.colour'},
+{c:'PI-GREEN-CHROME-LT1',d:'PI GREEN CHROME GC LT 1',u:'Lt',p:180.25,g:'licata.colour'},
+{c:'PI-GREEN-COLORANT-LT1',d:'PI GREEN COLORANT VF LT 1',u:'Lt',p:79.83,g:'licata.colour'},
+{c:'PI-ORANGE-OXIDE-LT1',d:'PI ORANGE OXIDE OO LT 1',u:'Lt',p:87.55,g:'licata.colour'},
+{c:'PI-RED-OXYDE-LT1',d:'PI RED OXYDE RO LT 1',u:'Lt',p:90.13,g:'licata.colour'},
+{c:'PI-WHITE-WO-LT1',d:'PI WHITE WO LT 1',u:'Lt',p:79.83,g:'licata.colour'},
+{c:'PI-YELLOW-OXIDE-LT1',d:'PI YELLOW OXIDE YO LT 1',u:'Lt',p:66.95,g:'licata.colour'},
+{c:'PI-YELLOW-SAT-LT1',d:'PI YELLOW SATURED YB LT 1',u:'Lt',p:103.00,g:'licata.colour'},
+{c:'PI-YELLOW-VAN-LT1',d:'PI YELLOW VANADATE YV LT 1',u:'Lt',p:344.25,g:'licata.colour'},
+];
+
+// ═══════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════
+let lines = [];
+let filtered = [...CAT];
+let activeGrp = '';
+
+// ═══════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('ordDate').value = new Date().toISOString().split('T')[0];
+  renderList();
+  renderRubrica();
+});
+
+// ═══════════════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════════════
+function go(id, idx) {
+  document.querySelectorAll('.sec').forEach(s => s.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+  document.getElementById('tab-' + id).classList.add('on');
+  document.querySelectorAll('.tab')[idx].classList.add('on');
+  document.querySelectorAll('.step').forEach((s, i) => s.classList.toggle('done', i <= idx));
+  if (id === 'recap') buildPreview();
+  if (id === 'rubrica') renderRubrica();
+  window.scrollTo(0, 0);
+}
+
+// ═══════════════════════════════════════════════
+// FORM HELPERS
+// ═══════════════════════════════════════════════
+function handleAgente(sel) {
+  document.getElementById('agenteAltroRow').style.display = sel.value === 'ALTRO' ? '' : 'none';
+}
+function ckT(inp, id) {
+  document.getElementById(id).classList.toggle('on', inp.checked);
+}
+function gv(id) { const e = document.getElementById(id); return e ? e.value.trim() : ''; }
+function sv(id, val) { const e = document.getElementById(id); if (e) e.value = val || ''; }
+function ck(id) { return document.getElementById(id).classList.contains('on'); }
+function setCk(id, val) {
+  const el = document.getElementById(id); if (!el) return;
+  el.classList.toggle('on', !!val);
+  const inp = el.querySelector('input'); if (inp) inp.checked = !!val;
+}
+function fmt(n) { return (n || 0).toLocaleString('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+function fmtD(d) { if (!d) return '—'; const [y, m, dd] = d.split('-'); return `${dd}/${m}/${y}`; }
+
+function getForm() {
+  const ag = gv('agente');
+  return {
+    num: gv('ordNum'), date: gv('ordDate'),
+    agente: ag === 'ALTRO' ? gv('agenteAltro') : ag,
+    cliente: gv('cliente'), codCli: gv('codCliente'),
+    cig: gv('cig'), cup: gv('cup'),
+    consegna: gv('consegna'), note: gv('note'),
+    trasporto: gv('trasporto'), noteTrasporto: gv('noteTrasporto'),
+    dNome: gv('dNome'), dVia: gv('dVia'), dCap: gv('dCap'),
+    dCitta: gv('dCitta'), dProv: gv('dProv'), dRef: gv('dRef'),
+    email: gv('emailDest'),
+    sponda: ck('ck-sponda'), imb: ck('ck-imb'), trasp: ck('ck-trasp'), ritira: ck('ck-ritira'),
+    mazz: ck('ck-mazz'), mazz2: ck('ck-mazz2'), cont: ck('ck-cont'), camp: ck('ck-camp'),
+  };
+}
+
+function fillForm(f) {
+  sv('ordNum', f.num); sv('ordDate', f.date);
+  const ag = document.getElementById('agente');
+  if (f.agente === 'DANIELE SALOMONE') {
+    ag.value = 'DANIELE SALOMONE';
+    document.getElementById('agenteAltroRow').style.display = 'none';
+  } else if (f.agente) {
+    ag.value = 'ALTRO';
+    document.getElementById('agenteAltroRow').style.display = '';
+    sv('agenteAltro', f.agente);
+  } else { ag.value = ''; }
+  sv('cliente', f.cliente); sv('codCliente', f.codCli);
+  sv('cig', f.cig); sv('cup', f.cup);
+  sv('consegna', f.consegna); sv('note', f.note);
+  sv('trasporto', f.trasporto); sv('noteTrasporto', f.noteTrasporto);
+  setCk('ck-sponda', f.sponda); setCk('ck-imb', f.imb);
+  setCk('ck-trasp', f.trasp); setCk('ck-ritira', f.ritira);
+  setCk('ck-mazz', f.mazz); setCk('ck-mazz2', f.mazz2);
+  setCk('ck-cont', f.cont); setCk('ck-camp', f.camp);
+  sv('dNome', f.dNome); sv('dVia', f.dVia); sv('dCap', f.dCap);
+  sv('dCitta', f.dCitta); sv('dProv', f.dProv); sv('dRef', f.dRef);
+  sv('emailDest', f.email);
+}
+
+// ═══════════════════════════════════════════════
+// ARTICLE LIST
+// ═══════════════════════════════════════════════
+function renderList() {
+  const list = document.getElementById('artList');
+  if (!filtered.length) { list.innerHTML = '<div class="art-empty">Nessun risultato</div>'; return; }
+  list.innerHTML = filtered.slice(0, 150).map(a =>
+    `<div class="art-item" onclick="addLine('${a.c}')">
+      <div class="art-info">
+        <div class="art-code">${a.c}</div>
+        <div class="art-desc">${a.d}</div>
+        <div class="art-grp">${a.g}</div>
+      </div>
+      <div class="art-price">€${fmt(a.p)}<span>/${a.u}</span></div>
+      <div class="art-add">+</div>
+    </div>`
+  ).join('');
+}
+
+function doFilter() {
+  const q = document.getElementById('srch').value.toLowerCase();
+  filtered = CAT.filter(a => {
+    const mG = !activeGrp || a.g.toLowerCase().includes(activeGrp.toLowerCase()) || a.d.toLowerCase().includes(activeGrp.toLowerCase());
+    const mQ = !q || a.c.toLowerCase().includes(q) || a.d.toLowerCase().includes(q) || a.g.toLowerCase().includes(q);
+    return mG && mQ;
+  });
+  renderList();
+}
+
+function setGrp(g, btn) {
+  activeGrp = g;
+  document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  doFilter();
+}
+
+// ═══════════════════════════════════════════════
+// ORDER LINES
+// ═══════════════════════════════════════════════
+function addLine(code) {
+  const art = CAT.find(a => a.c === code);
+  if (!art) return;
+  if (lines.find(l => l.c === code)) { toast('Già in ordine'); return; }
+  lines.push({ id: Date.now(), c: art.c, d: art.d, u: art.u, p: art.p, qty: '', sc: '', tot: 0 });
+  renderLines();
+  toast('✓ Aggiunto');
+}
+
+function removeLine(id) {
+  lines = lines.filter(l => l.id !== id);
+  renderLines();
+}
+
+function upd(id, field, val) {
+  const l = lines.find(x => x.id === id);
+  if (!l) return;
+  l[field] = parseFloat(val) || 0;
+  l.tot = (l.qty || 0) * (l.p || 0) * (1 - (l.sc || 0) / 100);
+  const el = document.querySelector(`#ln${id} .oline-tot span`);
+  if (el) el.textContent = '€ ' + fmt(l.tot);
+  updateTotals();
+}
+
+function renderLines() {
+  const c = document.getElementById('linesCont');
+  document.getElementById('lineCount').textContent = '(' + lines.length + ')';
+  if (!lines.length) {
+    c.innerHTML = '<div class="no-lines">Nessun articolo aggiunto.</div>';
+    updateTotals(); return;
+  }
+  c.innerHTML = lines.map(l => `
+    <div class="oline" id="ln${l.id}">
+      <div class="oline-hd">
+        <div>
+          <div class="oline-code">${l.c}</div>
+          <div class="oline-desc">${l.d}</div>
+        </div>
+        <div class="oline-rm" onclick="removeLine(${l.id})">✕</div>
+      </div>
+      <div class="oline-grid">
+        <div class="mf"><label>Qtà (${l.u})</label><input type="number" inputmode="decimal" step="0.01" placeholder="0.00" value="${l.qty || ''}" onchange="upd(${l.id},'qty',this.value)" oninput="upd(${l.id},'qty',this.value)"></div>
+        <div class="mf"><label>Pr. Unit.</label><input type="number" inputmode="decimal" step="0.01" value="${l.p}" onchange="upd(${l.id},'p',this.value)" oninput="upd(${l.id},'p',this.value)"></div>
+        <div class="mf"><label>Sconto %</label><input type="number" inputmode="decimal" step="0.1" placeholder="0" value="${l.sc || ''}" onchange="upd(${l.id},'sc',this.value)" oninput="upd(${l.id},'sc',this.value)"></div>
+      </div>
+      <div class="oline-tot">Importo: <span>€ ${fmt(l.tot)}</span></div>
+    </div>`).join('');
+  updateTotals();
+}
+
+function updateTotals() {
+  const t = lines.reduce((s, l) => s + (l.tot || 0), 0);
+  const f = '€ ' + fmt(t);
+  document.getElementById('grandTotal').textContent = f;
+  const g2 = document.getElementById('grandTotal2');
+  if (g2) g2.textContent = f;
+}
+
+// ═══════════════════════════════════════════════
+// PREVIEW & MAIL
+// ═══════════════════════════════════════════════
+function buildPreview() {
+  updateTotals();
+  const f = getForm();
+  const tot = lines.reduce((s, l) => s + (l.tot || 0), 0);
+  const log = [f.sponda && 'Sponda', f.imb && 'Imballaggio', f.trasp && 'Trasporto', f.ritira && 'Ritira Cliente'].filter(Boolean).join(', ') || '—';
+  const col = [f.mazz && 'Mazzetta', f.mazz2 && 'Mazzetta New 2.0', f.cont && 'Continuazione', f.camp && 'Campione'].filter(Boolean).join(', ') || '—';
+  let h = `
+    <div class="prev-logo"><em>l</em>icata®</div>
+    <div class="prev-sub">FIP chemicals — Ordine</div>
+    <div class="prev-grid">
+      <div class="pf"><div class="pf-lbl">Ordine N°</div><div class="pf-val">${f.num || '—'}</div></div>
+      <div class="pf"><div class="pf-lbl">Data</div><div class="pf-val">${fmtD(f.date)}</div></div>
+      <div class="pf"><div class="pf-lbl">Cliente</div><div class="pf-val">${f.cliente || '—'}</div></div>
+      <div class="pf"><div class="pf-lbl">Cod. Cliente</div><div class="pf-val">${f.codCli || '—'}</div></div>
+      <div class="pf"><div class="pf-lbl">Agente</div><div class="pf-val">${f.agente || '—'}</div></div>
+      <div class="pf"><div class="pf-lbl">Consegna dal</div><div class="pf-val">${fmtD(f.consegna)}</div></div>
+    </div>
+    <div class="pf" style="margin-bottom:8px"><div class="pf-lbl">Destinazione</div><div class="pf-val">${[f.dNome, f.dVia, f.dCap + ' ' + f.dCitta + (f.dProv ? ' (' + f.dProv + ')' : '')].filter(x => x.trim()).join(' – ')}</div></div>
+    <div class="prev-grid">
+      <div class="pf"><div class="pf-lbl">Logistica</div><div class="pf-val" style="font-size:11px">${log}</div></div>
+      <div class="pf"><div class="pf-lbl">Origine Colore</div><div class="pf-val" style="font-size:11px">${col}</div></div>
+    </div>`;
+  if (f.trasporto || f.noteTrasporto) {
+    h += `<div class="pf" style="margin-bottom:8px">
+      <div class="pf-lbl">Trasporto (da confermare)</div>
+      <div class="pf-val" style="font-size:11px">${f.trasporto ? '€ ' + f.trasporto : ''}${f.trasporto && f.noteTrasporto ? ' – ' : ''}${f.noteTrasporto || ''}</div>
+    </div>`;
+  }
+  if (lines.length) {
+    h += `<table class="prev-table">
+      <tr><th>Cod.</th><th>Descrizione</th><th>U.M.</th><th>Qtà</th><th>€/U.</th><th>Sc%</th><th>Imp.</th></tr>
+      ${lines.map(l => `<tr><td>${l.c}</td><td style="font-size:8px;max-width:90px">${l.d}</td><td>${l.u}</td><td>${l.qty || '—'}</td><td>${fmt(l.p)}</td><td>${l.sc || 0}</td><td><b>€${fmt(l.tot)}</b></td></tr>`).join('')}
+    </table>
+    <div class="prev-total">TOTALE: € ${fmt(tot)}</div>`;
+  } else {
+    h += '<div style="text-align:center;color:#aaa;font-size:12px;padding:12px">Nessun articolo inserito</div>';
+  }
+  if (f.note) h += `<div style="margin-top:10px;background:#f5f5f5;border-radius:5px;padding:8px;font-size:11px"><b>Note:</b> ${f.note}</div>`;
+  h += `<div style="margin-top:12px;padding:8px 10px;background:#fff8e1;border:1px solid #f0c040;border-radius:5px;font-size:9px;color:#5a4000;line-height:1.5">
+    ⚠️ <strong>Prezzi indicativi da listino, soggetti a variazioni.</strong> I costi di trasporto vanno confermati al momento dell'ordine. Il documento non costituisce conferma d'ordine.
+  </div>`;
+  document.getElementById('previewCont').innerHTML = h;
+  document.getElementById('grandTotal2').textContent = '€ ' + fmt(tot);
+}
+
+function openModal() {
+  buildPreview();
+  document.getElementById('modalCont').innerHTML = document.getElementById('previewCont').innerHTML;
+  document.getElementById('modalBg').classList.add('on');
+}
+function closeModal() { document.getElementById('modalBg').classList.remove('on'); }
+
+// ═══════════════════════════════════════════════
+// PDF + MAIL
+// ═══════════════════════════════════════════════
+
+let _pdfBlob = null;
+let _mailHref = null;
+
+function sendMail() {
+  buildPreview();
+  _pdfBlob = null;
+  _mailHref = null;
+  showPdfOverlay('Generazione PDF…', 'Creazione del documento in corso…');
+  // slight delay so overlay renders before jsPDF blocks UI
+  setTimeout(() => {
+    try {
+      _pdfBlob = generatePDF();
+      _mailHref = buildMailHref();
+      setPdfStep('Documento pronto!', 'Scegli come procedere:');
+      document.getElementById('pdfActions').style.display = 'flex';
+    } catch(e) {
+      setPdfStep('⚠️ Errore PDF', 'Impossibile generare il PDF. Verrà aperta solo la mail.');
+      document.getElementById('pdfActions').style.display = 'flex';
+      _pdfBlob = null;
+    }
+  }, 80);
+}
+
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+  const f = getForm();
+  const tot = lines.reduce((s, l) => s + (l.tot || 0), 0);
+
+  const RED = [200, 32, 26];
+  const DARK = [17, 17, 17];
+  const GRAY = [120, 120, 120];
+  const LGRAY = [240, 240, 238];
+  const pw = 210; // page width
+  const ml = 14; // margin left
+  const mr = 14; // margin right
+  const cw = pw - ml - mr; // content width
+
+  // ── HEADER BAR ──
+  doc.setFillColor(...RED);
+  doc.rect(0, 0, 210, 18, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bolditalic');
+  doc.text('licata', ml, 12);
+  doc.setFontSize(8);
+  doc.setFont('helvetica', 'bold');
+  doc.text('FIP chemicals', ml + 21, 12);
+  doc.setFont('helvetica', 'normal');
+  doc.text('MODULO ORDINE', pw - mr, 12, { align: 'right' });
+
+  // ── SUBHEADER ──
+  doc.setFillColor(...DARK);
+  doc.rect(0, 18, 210, 8, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(7.5);
+  doc.setFont('helvetica', 'bold');
+  const subItems = [
+    `N° ${f.num || '—'}`,
+    `Data: ${fmtD(f.date)}`,
+    `Agente: ${f.agente || '—'}`,
+  ];
+  doc.text(subItems.join('   ·   '), ml, 23.5);
+
+  let y = 30;
+
+  // ── DATI ORDINE + DESTINAZIONE (2 colonne) ──
+  const col1x = ml, col2x = ml + cw / 2 + 3;
+  const colW = cw / 2 - 3;
+
+  // box sx - Cliente
+  doc.setFillColor(...LGRAY);
+  doc.roundedRect(col1x, y, colW, 38, 1.5, 1.5, 'F');
+  doc.setTextColor(...RED);
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('CLIENTE', col1x + 3, y + 5);
+  doc.setTextColor(...DARK);
+  doc.setFontSize(10);
+  doc.setFont('helvetica', 'bold');
+  doc.text(f.cliente || '—', col1x + 3, y + 11, { maxWidth: colW - 6 });
+  doc.setFontSize(7.5);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(...GRAY);
+  let sy = y + 17;
+  if (f.codCli) { doc.text(`Cod: ${f.codCli}`, col1x + 3, sy); sy += 5; }
+  if (f.cig) { doc.text(`CIG: ${f.cig}`, col1x + 3, sy); sy += 5; }
+  if (f.cup) { doc.text(`CUP: ${f.cup}`, col1x + 3, sy); sy += 5; }
+  if (f.email) { doc.text(`✉ ${f.email}`, col1x + 3, sy); }
+
+  // box dx - Destinazione
+  doc.setFillColor(...LGRAY);
+  doc.roundedRect(col2x, y, colW, 38, 1.5, 1.5, 'F');
+  doc.setTextColor(...RED);
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('DESTINAZIONE MERCE', col2x + 3, y + 5);
+  doc.setTextColor(...DARK);
+  doc.setFontSize(8.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text(f.dNome || '—', col2x + 3, y + 11, { maxWidth: colW - 6 });
+  doc.setFontSize(7.5);
+  doc.setFont('helvetica', 'normal');
+  doc.setTextColor(...GRAY);
+  let sy2 = y + 17;
+  if (f.dVia) { doc.text(f.dVia, col2x + 3, sy2, { maxWidth: colW - 6 }); sy2 += 5; }
+  const citta = [f.dCap, f.dCitta, f.dProv ? `(${f.dProv})` : ''].filter(Boolean).join(' ');
+  if (citta.trim()) { doc.text(citta, col2x + 3, sy2); sy2 += 5; }
+  if (f.dRef) { doc.text(`Ref: ${f.dRef}`, col2x + 3, sy2); }
+
+  y += 42;
+
+  // ── LOGISTICA + CONSEGNA ──
+  doc.setFillColor(...DARK);
+  doc.rect(ml, y, cw, 7, 'F');
+  doc.setTextColor(255, 255, 255);
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica', 'bold');
+  const logStr = [f.sponda && 'Sponda', f.imb && 'Imballaggio', f.trasp && 'Trasporto', f.ritira && 'Ritira Cliente'].filter(Boolean).join('  ·  ') || '—';
+  const colStr = [f.mazz && 'Mazzetta', f.mazz2 && 'Mazzetta New 2.0', f.cont && 'Continuazione', f.camp && 'Campione'].filter(Boolean).join('  ·  ') || '—';
+  doc.text(`Logistica: ${logStr}`, ml + 3, y + 4.5);
+  const consStr = f.consegna ? `Consegna dal: ${fmtD(f.consegna)}` : '';
+  if (consStr) doc.text(consStr, pw - mr, y + 4.5, { align: 'right' });
+  y += 9;
+
+  // Trasporto row (if filled)
+  if (f.trasporto || f.noteTrasporto) {
+    doc.setFillColor(255, 248, 225);
+    doc.rect(ml, y, cw, 7, 'F');
+    doc.setDrawColor(240, 192, 64);
+    doc.rect(ml, y, cw, 7, 'S');
+    doc.setTextColor(90, 64, 0);
+    doc.setFontSize(6.5);
+    doc.setFont('helvetica', 'bold');
+    let trStr = '🚚 Trasporto (da confermare):  ';
+    if (f.trasporto) trStr += '€ ' + f.trasporto;
+    if (f.trasporto && f.noteTrasporto) trStr += '  –  ';
+    if (f.noteTrasporto) trStr += f.noteTrasporto;
+    doc.text(trStr, ml + 3, y + 4.5);
+    y += 9;
+  } else {
+    y += 1;
+  }
+
+  // ── TABELLA ARTICOLI ──
+  if (lines.length) {
+    const head = [['Cod. Art.', 'Descrizione', 'U.M.', 'Qtà', '€/U.', 'Sc.%', 'Importo']];
+    const body = lines.map(l => [
+      l.c,
+      l.d,
+      l.u,
+      l.qty ? String(l.qty) : '—',
+      fmt(l.p),
+      l.sc ? String(l.sc) + '%' : '0%',
+      '€ ' + fmt(l.tot)
+    ]);
+
+    doc.autoTable({
+      startY: y,
+      head,
+      body,
+      margin: { left: ml, right: mr },
+      styles: { fontSize: 7, cellPadding: 2.5, textColor: DARK, lineColor: [220, 220, 218], lineWidth: 0.2 },
+      headStyles: { fillColor: RED, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 7 },
+      alternateRowStyles: { fillColor: [250, 250, 248] },
+      columnStyles: {
+        0: { cellWidth: 22, fontStyle: 'bold' },
+        1: { cellWidth: 'auto' },
+        2: { cellWidth: 11, halign: 'center' },
+        3: { cellWidth: 14, halign: 'right' },
+        4: { cellWidth: 18, halign: 'right' },
+        5: { cellWidth: 12, halign: 'right' },
+        6: { cellWidth: 22, halign: 'right', fontStyle: 'bold' }
+      },
+      didDrawPage: (data) => { y = data.cursor.y; }
+    });
+    y = doc.lastAutoTable.finalY + 4;
+
+    // TOTALE
+    doc.setFillColor(...RED);
+    doc.rect(pw - mr - 60, y, 60, 10, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'bold');
+    doc.text('TOTALE ORDINE', pw - mr - 57, y + 4);
+    doc.setFontSize(11);
+    doc.text('€ ' + fmt(tot), pw - mr - 3, y + 7, { align: 'right' });
+    y += 14;
+  } else {
+    doc.setTextColor(...GRAY);
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'italic');
+    doc.text('Nessun articolo inserito', ml, y + 6);
+    y += 14;
+  }
+
+  // ── NOTE ──
+  if (f.note) {
+    doc.setFillColor(...LGRAY);
+    doc.roundedRect(ml, y, cw, 16, 1.5, 1.5, 'F');
+    doc.setTextColor(...RED);
+    doc.setFontSize(6.5);
+    doc.setFont('helvetica', 'bold');
+    doc.text('NOTE', ml + 3, y + 5);
+    doc.setTextColor(...DARK);
+    doc.setFontSize(7.5);
+    doc.setFont('helvetica', 'normal');
+    doc.text(f.note, ml + 3, y + 10, { maxWidth: cw - 6 });
+    y += 20;
+  }
+
+  // ── ORIGINE COLORE ──
+  doc.setTextColor(...GRAY);
+  doc.setFontSize(7);
+  doc.setFont('helvetica', 'normal');
+  doc.text(`Origine colore: ${colStr}`, ml, y);
+  y += 8;
+
+  // ── DISCLAIMER ──
+  const discH = 14;
+  doc.setFillColor(255, 248, 225);
+  doc.roundedRect(ml, y, cw, discH, 1.5, 1.5, 'F');
+  doc.setDrawColor(240, 192, 64);
+  doc.roundedRect(ml, y, cw, discH, 1.5, 1.5, 'S');
+  doc.setTextColor(90, 64, 0);
+  doc.setFontSize(6.5);
+  doc.setFont('helvetica', 'bold');
+  doc.text('⚠️  NOTA IMPORTANTE', ml + 3, y + 4.5);
+  doc.setFont('helvetica', 'normal');
+  const disc = 'I prezzi indicati si riferiscono al listino in vigore e sono soggetti a variazioni senza preavviso. I costi di trasporto sono indicativi e devono essere confermati al momento dell\'ordine in base a destinazione, quantità e modalità di consegna. Il presente documento non costituisce conferma d\'ordine.';
+  doc.text(disc, ml + 3, y + 9, { maxWidth: cw - 6 });
+
+  // ── FOOTER ──
+  const pageCount = doc.internal.getNumberOfPages();
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i);
+    doc.setFillColor(...DARK);
+    doc.rect(0, 285, 210, 12, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(6.5);
+    doc.setFont('helvetica', 'normal');
+    doc.text('licata FIP chemicals · www.licataspa.it · info@licataspa.it', ml, 292);
+    doc.text(`Pag. ${i}/${pageCount}`, pw - mr, 292, { align: 'right' });
+  }
+
+  return doc.output('blob');
+}
+
+function buildMailHref() {
+  const f = getForm();
+  const tot = lines.reduce((s, l) => s + (l.tot || 0), 0);
+  const log = [f.sponda && 'Sponda', f.imb && 'Imballaggio', f.trasp && 'Trasporto', f.ritira && 'Ritira Cliente'].filter(Boolean).join(', ') || '—';
+  const col = [f.mazz && 'Mazzetta', f.mazz2 && 'Mazzetta New 2.0', f.cont && 'Continuazione', f.camp && 'Campione'].filter(Boolean).join(', ') || '—';
+  const subj = `Ordine N° ${f.num || 'N/D'} – ${f.cliente || 'Cliente'} – ${fmtD(f.date)}`;
+  let body = `LICATA FIP CHEMICALS – MODULO ORDINE\n${'═'.repeat(50)}\n\n`;
+  body += `ORDINE N°: ${f.num || '—'}   DATA: ${fmtD(f.date)}\nAGENTE: ${f.agente || '—'}\n\n`;
+  body += `CLIENTE: ${f.cliente || '—'}\nCOD. CLIENTE: ${f.codCli || '—'}\n`;
+  if (f.cig) body += `CIG: ${f.cig}\n`;
+  if (f.cup) body += `CUP: ${f.cup}\n`;
+  body += `\nDESTINAZIONE:\n${f.dNome || ''}\n${f.dVia || ''}\n${f.dCap || ''} ${f.dCitta || ''} ${f.dProv ? '(' + f.dProv + ')' : ''}\n`;
+  if (f.dRef) body += `Ref: ${f.dRef}\n`;
+  body += `\nLOGISTICA: ${log}\nORIGINE COLORE: ${col}\n`;
+  if (f.trasporto || f.noteTrasporto) {
+    body += `TRASPORTO (da confermare): ${f.trasporto ? '€ ' + f.trasporto : '—'}`;
+    if (f.noteTrasporto) body += ` – ${f.noteTrasporto}`;
+    body += '\n';
+  }
+  body += `\n${'─'.repeat(50)}\nARTICOLI\n${'─'.repeat(50)}\n\n`;
+  if (lines.length) {
+    lines.forEach((l, i) => {
+      body += `${i + 1}. [${l.c}] ${l.d}\n   UM: ${l.u} | Qtà: ${l.qty || '—'} | Prezzo: €${fmt(l.p)} | Sc.: ${l.sc || 0}%\n   IMPORTO: € ${fmt(l.tot)}\n\n`;
+    });
+    body += `${'─'.repeat(50)}\nTOTALE ORDINE: € ${fmt(tot)}\n${'─'.repeat(50)}\n`;
+    body += `\n📎 Il PDF dell'ordine è allegato a questa email.\n`;
+  } else { body += 'Nessun articolo inserito\n'; }
+  if (f.consegna) body += `\nCONSEGNA DAL: ${fmtD(f.consegna)}\n`;
+  if (f.note) body += `\nNOTE: ${f.note}\n`;
+  body += `\n${'─'.repeat(50)}\n⚠️  NOTA: I prezzi indicati sono da listino e soggetti a variazioni senza preavviso.\nI costi di trasporto sono indicativi e devono essere confermati al momento dell'ordine\nin base a destinazione, quantità e modalità di consegna.\nIl presente documento non costituisce conferma d'ordine.\n${'─'.repeat(50)}\n`;
+  return `mailto:${encodeURIComponent(f.email || '')}?subject=${encodeURIComponent(subj)}&body=${encodeURIComponent(body)}`;
+}
+
+function doPdfDownload() {
+  if (!_pdfBlob) { toast('⚠️ PDF non disponibile'); return; }
+  const f = getForm();
+  const fname = `Ordine_${(f.cliente || 'Licata').replace(/\s+/g,'_')}_${f.num || new Date().getTime()}.pdf`;
+  const url = URL.createObjectURL(_pdfBlob);
+  const a = document.createElement('a');
+  a.href = url; a.download = fname; a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 3000);
+  toast('⬇️ PDF scaricato');
+}
+
+function doOpenMail() {
+  if (!_mailHref) return;
+  window.location.href = _mailHref;
+  toast('📧 Apertura mail…');
+  closePdfOverlay();
+}
+
+function doBoth() {
+  doPdfDownload();
+  setTimeout(() => {
+    doOpenMail();
+  }, 1200);
+}
+
+function showPdfOverlay(step, msg) {
+  document.getElementById('pdfStep').textContent = step;
+  document.getElementById('pdfMsg').textContent = msg;
+  document.getElementById('pdfActions').style.display = 'none';
+  document.getElementById('pdfOverlay').style.display = 'flex';
+}
+function setPdfStep(step, msg) {
+  document.getElementById('pdfStep').textContent = step;
+  document.getElementById('pdfMsg').textContent = msg;
+}
+function closePdfOverlay() {
+  document.getElementById('pdfOverlay').style.display = 'none';
+}
+
+
+
+// ═══════════════════════════════════════════════
+// STORAGE – localStorage
+// ═══════════════════════════════════════════════
+const K_ANA = 'licata_ana_v2';
+const K_DRAFT = 'licata_draft_v2';
+
+function lsGet(k) { try { return JSON.parse(localStorage.getItem(k) || '[]'); } catch { return []; } }
+function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { toast('⚠️ Storage pieno'); } }
+
+// ── ANAGRAFICHE ──
+function saveAna() {
+  const f = getForm();
+  if (!f.cliente) { toast('⚠️ Inserisci la ragione sociale'); return; }
+  const arr = lsGet(K_ANA);
+  const idx = arr.findIndex(a => a.nome.toLowerCase() === f.cliente.toLowerCase());
+  const entry = {
+    id: idx >= 0 ? arr[idx].id : Date.now(),
+    nome: f.cliente, codCli: f.codCli, cig: f.cig, cup: f.cup,
+    dNome: f.dNome, dVia: f.dVia, dCap: f.dCap, dCitta: f.dCitta, dProv: f.dProv, dRef: f.dRef,
+    email: f.email, savedAt: new Date().toLocaleDateString('it-IT')
+  };
+  if (idx >= 0) arr[idx] = entry; else arr.unshift(entry);
+  lsSet(K_ANA, arr);
+  updateBadge();
+  toast(idx >= 0 ? '✅ Anagrafica aggiornata' : '✅ Anagrafica salvata');
+}
+
+function loadAna(id) {
+  const a = lsGet(K_ANA).find(x => x.id === id);
+  if (!a) return;
+  sv('cliente', a.nome); sv('codCliente', a.codCli);
+  sv('cig', a.cig); sv('cup', a.cup);
+  sv('dNome', a.dNome); sv('dVia', a.dVia); sv('dCap', a.dCap);
+  sv('dCitta', a.dCitta); sv('dProv', a.dProv); sv('dRef', a.dRef);
+  sv('emailDest', a.email);
+  go('testata', 0);
+  toast('✅ Cliente caricato');
+}
+
+function delAna(id, e) {
+  e.stopPropagation();
+  if (!confirm('Eliminare questa anagrafica?')) return;
+  lsSet(K_ANA, lsGet(K_ANA).filter(a => a.id !== id));
+  renderRubrica();
+  toast('🗑 Eliminata');
+}
+
+// ── BOZZE ──
+function saveDraft() {
+  const f = getForm();
+  const tot = lines.reduce((s, l) => s + (l.tot || 0), 0);
+  const label = (f.cliente || 'Ordine') + (f.num ? ' · N°' + f.num : '') + ' · ' + new Date().toLocaleDateString('it-IT');
+  const arr = lsGet(K_DRAFT);
+  arr.unshift({ id: Date.now(), label, tot, date: new Date().toLocaleDateString('it-IT'), form: f, lines: JSON.parse(JSON.stringify(lines)) });
+  if (arr.length > 25) arr.pop();
+  lsSet(K_DRAFT, arr);
+  updateBadge();
+  toast('💾 Bozza salvata');
+}
+
+function loadDraft(id) {
+  const d = lsGet(K_DRAFT).find(x => x.id === id);
+  if (!d) return;
+  fillForm(d.form);
+  lines = d.lines || [];
+  renderLines();
+  go('testata', 0);
+  toast('✅ Bozza caricata');
+}
+
+function delDraft(id, e) {
+  e.stopPropagation();
+  if (!confirm('Eliminare questa bozza?')) return;
+  lsSet(K_DRAFT, lsGet(K_DRAFT).filter(x => x.id !== id));
+  renderRubrica();
+  toast('🗑 Bozza eliminata');
+}
+
+// ── RENDER RUBRICA ──
+function renderRubrica() {
+  const anas = lsGet(K_ANA);
+  const drafts = lsGet(K_DRAFT);
+  document.getElementById('anaCount').textContent = anas.length;
+  document.getElementById('draftCount').textContent = drafts.length;
+  updateBadge();
+
+  // Anagrafiche
+  const aEl = document.getElementById('anaList');
+  if (!anas.length) {
+    aEl.innerHTML = '<div class="empty-st"><div class="ei">👤</div><p>Nessuna anagrafica salvata.<br>Dalla scheda <b>Cliente</b> premi <b>+ Salva cliente</b>.</p></div>';
+  } else {
+    aEl.innerHTML = anas.map(a => `
+      <div class="ana-item">
+        <div class="ana-avatar">${a.nome.charAt(0).toUpperCase()}</div>
+        <div class="ana-info">
+          <div class="ana-name">${a.nome}</div>
+          <div class="ana-detail">${[a.dCitta, a.codCli, a.email].filter(Boolean).join(' · ') || 'Nessun dettaglio'}</div>
+        </div>
+        <div class="ana-actions">
+          <button class="btn-sm-red" onclick="loadAna(${a.id})">Carica</button>
+          <button class="btn-sm-del" onclick="delAna(${a.id},event)">✕</button>
+        </div>
+      </div>`).join('');
+  }
+
+  // Bozze
+  const dEl = document.getElementById('draftList');
+  if (!drafts.length) {
+    dEl.innerHTML = '<div class="empty-st"><div class="ei">📝</div><p>Nessuna bozza salvata.<br>Dal <b>Riepilogo</b> premi <b>💾 Salva come Bozza</b>.</p></div>';
+  } else {
+    dEl.innerHTML = drafts.map(d => `
+      <div class="draft-item">
+        <div class="draft-icon">📄</div>
+        <div class="draft-info">
+          <div class="draft-name">${d.label}</div>
+          <div class="draft-meta">${d.date} · ${(d.lines || []).length} art. · € ${fmt(d.tot || 0)}</div>
+        </div>
+        <div class="draft-actions">
+          <button class="btn-sm-red" onclick="loadDraft(${d.id})">Carica</button>
+          <button class="btn-sm-del" onclick="delDraft(${d.id},event)">✕</button>
+        </div>
+      </div>`).join('');
+  }
+}
+
+function updateBadge() {
+  const tot = lsGet(K_ANA).length + lsGet(K_DRAFT).length;
+  const b = document.getElementById('badgeTot');
+  if (tot > 0) { b.textContent = tot; b.style.display = 'inline-block'; }
+  else { b.style.display = 'none'; }
+}
+
+// ═══════════════════════════════════════════════
+// TOAST
+// ═══════════════════════════════════════════════
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('on');
+  setTimeout(() => t.classList.remove('on'), 2200);
+}
+
+</script>
+</body>
+</html>
