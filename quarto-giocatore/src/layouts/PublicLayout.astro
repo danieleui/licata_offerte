@@ -1,0 +1,19 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  titolo: string;
+}
+
+const { titolo } = Astro.props;
+---
+
+<Layout titolo={titolo}>
+  <header class="claim">
+    <h1>Quarto Giocatore</h1>
+    <p>Trova il quarto. Chiudi la partita.</p>
+  </header>
+  <main class="contenitore">
+    <slot />
+  </main>
+</Layout>

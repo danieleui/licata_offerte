@@ -1,0 +1,210 @@
+:root {
+  color-scheme: light;
+  --colore-testo: #1a1a1a;
+  --colore-sfondo: #ffffff;
+  --colore-bordo: #d8dce1;
+  --colore-primario: #1f6f50;
+  --colore-primario-scuro: #16513a;
+  --colore-pericolo: #b3261e;
+  --colore-attesa: #9a6700;
+  --colore-muto: #5c6470;
+  --colore-sfondo-alt: #f4f6f8;
+  --raggio: 10px;
+  --spazio-1: 0.25rem;
+  --spazio-2: 0.5rem;
+  --spazio-3: 0.75rem;
+  --spazio-4: 1rem;
+  --spazio-6: 1.5rem;
+  --spazio-8: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--colore-testo);
+  background: var(--colore-sfondo-alt);
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 var(--spazio-3);
+}
+
+a {
+  color: var(--colore-primario);
+}
+
+.contenitore {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--spazio-4);
+}
+
+.scheda {
+  background: var(--colore-sfondo);
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio);
+  padding: var(--spazio-4);
+  margin-bottom: var(--spazio-4);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-1);
+  margin-bottom: var(--spazio-4);
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  padding: var(--spazio-2) var(--spazio-3);
+  border: 1px solid var(--colore-bordo);
+  border-radius: var(--raggio);
+  background: var(--colore-sfondo);
+  color: var(--colore-testo);
+  width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--colore-primario);
+  outline-offset: 1px;
+}
+
+.pulsante {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spazio-2);
+  padding: var(--spazio-3) var(--spazio-4);
+  border-radius: var(--raggio);
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  min-height: 44px;
+  width: 100%;
+}
+
+.pulsante:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.pulsante--primario {
+  background: var(--colore-primario);
+  color: #fff;
+}
+
+.pulsante--primario:hover:not(:disabled) {
+  background: var(--colore-primario-scuro);
+}
+
+.pulsante--secondario {
+  background: var(--colore-sfondo);
+  color: var(--colore-testo);
+  border-color: var(--colore-bordo);
+}
+
+.pulsante--pericolo {
+  background: #fff;
+  color: var(--colore-pericolo);
+  border-color: var(--colore-pericolo);
+}
+
+.gruppo-pulsanti {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spazio-2);
+}
+
+@media (min-width: 480px) {
+  .gruppo-pulsanti {
+    flex-direction: row;
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spazio-1) var(--spazio-2);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.badge--confermato { background: #e3f4ea; color: var(--colore-primario-scuro); }
+.badge--attesa { background: #fdf1dc; color: var(--colore-attesa); }
+.badge--declinato,
+.badge--rinunciato { background: #f2f2f2; color: var(--colore-muto); }
+.badge--annullata { background: #fbe7e6; color: var(--colore-pericolo); }
+.badge--invitato { background: #e8ecf5; color: #33456b; }
+
+.testo-muto {
+  color: var(--colore-muto);
+  font-size: 0.9rem;
+}
+
+.errore {
+  color: var(--colore-pericolo);
+  font-size: 0.9rem;
+  margin-top: var(--spazio-1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: var(--spazio-2) var(--spazio-3);
+  border-bottom: 1px solid var(--colore-bordo);
+  font-size: 0.9rem;
+}
+
+nav.nav-admin {
+  display: flex;
+  gap: var(--spazio-4);
+  padding: var(--spazio-3) var(--spazio-4);
+  background: var(--colore-primario-scuro);
+  overflow-x: auto;
+}
+
+nav.nav-admin a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+header.claim {
+  padding: var(--spazio-6) var(--spazio-4);
+  text-align: center;
+  background: var(--colore-primario-scuro);
+  color: #fff;
+}
+
+header.claim p {
+  margin: 0;
+  opacity: 0.9;
+}

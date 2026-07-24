@@ -1,0 +1,32 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  titolo: string;
+}
+
+const { titolo } = Astro.props;
+---
+
+<Layout titolo={titolo}>
+  <nav class="nav-admin">
+    <a href="/admin">Dashboard</a>
+    <a href="/admin/giocatori">Giocatori</a>
+    <a href="/admin/partite">Partite</a>
+    <a href="#" id="logout-link">Esci</a>
+  </nav>
+  <main class="contenitore">
+    <slot />
+  </main>
+  <script>
+    import { getSupabaseBrowserClient } from '../lib/supabase/client';
+
+    const link = document.getElementById('logout-link');
+    link?.addEventListener('click', async (event) => {
+      event.preventDefault();
+      const supabase = getSupabaseBrowserClient();
+      await supabase.auth.signOut();
+      window.location.href = '/admin/login';
+    });
+  </script>
+</Layout>

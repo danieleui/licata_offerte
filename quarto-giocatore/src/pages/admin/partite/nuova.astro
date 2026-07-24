@@ -1,0 +1,9 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import MatchForm from '../../../components/admin/MatchForm';
+---
+
+<AdminLayout titolo="Nuova partita">
+  <h1>Nuova partita</h1>
+  <MatchForm client:load />
+</AdminLayout>

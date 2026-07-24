@@ -1,0 +1,36 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import { createSupabaseServerClient } from '../../../lib/supabase/server';
+import {
+  classeBadgeStatoPartita,
+  formattaData,
+  formattaOra,
+  LABEL_STATO_PARTITA,
+} from '../../../lib/domain/formatters';
+
+const supabase = createSupabaseServerClient(Astro.cookies, Astro.request);
+const { data: partite } = await supabase
+  .from('matches')
+  .select('*')
+  .order('data', { ascending: false })
+  .order('ora_inizio', { ascending: false });
+---
+
+<AdminLayout titolo="Partite">
+  <h1>Partite</h1>
+  <div class="gruppo-pulsanti" style="margin-bottom: 1rem;">
+    <a class="pulsante pulsante--primario" href="/admin/partite/nuova">+ Nuova partita</a>
+  </div>
+
+  {(partite ?? []).length === 0 && <p class="testo-muto">Nessuna partita creata finora.</p>}
+
+  {(partite ?? []).map((p) => (
+    <a href={`/admin/partite/${p.id}`} class="scheda" style="display:block; text-decoration:none; color:inherit;">
+      <span class={`badge ${classeBadgeStatoPartita(p.stato)}`}>{LABEL_STATO_PARTITA[p.stato]}</span>
+      <p style="margin: 0.5rem 0 0; font-weight:600;">
+        {formattaData(p.data)} · {formattaOra(p.ora_inizio)}–{formattaOra(p.ora_fine)}
+      </p>
+      <p class="testo-muto" style="margin: 0.25rem 0 0;">{p.circolo}</p>
+    </a>
+  ))}
+</AdminLayout>

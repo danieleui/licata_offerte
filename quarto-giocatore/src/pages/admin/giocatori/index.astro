@@ -1,0 +1,16 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import PlayerList from '../../../components/admin/PlayerList';
+import { createSupabaseServerClient } from '../../../lib/supabase/server';
+
+const supabase = createSupabaseServerClient(Astro.cookies, Astro.request);
+const { data: giocatori } = await supabase
+  .from('players')
+  .select('*')
+  .order('cognome', { ascending: true });
+---
+
+<AdminLayout titolo="Giocatori">
+  <h1>Giocatori</h1>
+  <PlayerList giocatoriIniziali={giocatori ?? []} client:load />
+</AdminLayout>
