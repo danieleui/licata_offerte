@@ -1,0 +1,64 @@
+---
+import PublicLayout from '../../layouts/PublicLayout.astro';
+import InviteActions from '../../components/public/InviteActions';
+import ParticipantsPublicList from '../../components/public/ParticipantsPublicList';
+import PrivateMessageForm from '../../components/public/PrivateMessageForm';
+import { getSupabaseAnonServerClient } from '../../lib/supabase/server';
+import {
+  formattaCosto,
+  formattaData,
+  formattaOra,
+  LABEL_STATO_PARTITA,
+} from '../../lib/domain/formatters';
+const { token } = Astro.params;
+
+if (!token) {
+  return Astro.redirect('/');
+}
+
+const supabase = getSupabaseAnonServerClient();
+const { data } = await supabase.rpc('rpc_get_invito', { p_token: token });
+
+// rpc_get_invito restituisce {errore: string} per token invalido/scaduto:
+// niente distinzione di messaggio, per non offrire un oracolo di enumerazione.
+const invito = data && !('errore' in data) ? data : null;
+---
+
+<PublicLayout titolo="Il tuo invito">
+  {!invito ? (
+    <div class="scheda">
+      <p>Questo link non è valido o non è più attivo.</p>
+    </div>
+  ) : (
+    <>
+      <div class="scheda">
+        <h2>
+          {formattaData(invito.partita.data)} · {formattaOra(invito.partita.ora_inizio)}–{formattaOra(invito.partita.ora_fine)}
+        </h2>
+        <p>{invito.partita.circolo}</p>
+        <p class="testo-muto">
+          {invito.partita.indirizzo}
+          {invito.partita.numero_campo && ` · campo ${invito.partita.numero_campo}`}
+        </p>
+        <p class="testo-muto">Costo: {formattaCosto(invito.partita.costo)}</p>
+        {invito.partita.note && <p class="testo-muto">Note: {invito.partita.note}</p>}
+        <p class="testo-muto">Stato partita: {LABEL_STATO_PARTITA[invito.partita.stato]}</p>
+        {invito.partita.stato === 'annullata' && invito.partita.motivo_annullamento && (
+          <p class="errore">Partita annullata: {invito.partita.motivo_annullamento}</p>
+        )}
+      </div>
+
+      <InviteActions
+        token={token}
+        statoPartita={invito.partita.stato}
+        statoPartecipazione={invito.mia_partecipazione.stato}
+        posizioneAttesa={invito.mia_partecipazione.posizione_attesa}
+        client:load
+      />
+
+      <ParticipantsPublicList partecipanti={invito.partecipanti} client:visible />
+
+      <PrivateMessageForm token={token} client:visible />
+    </>
+  )}
+</PublicLayout>

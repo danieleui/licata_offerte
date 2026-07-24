@@ -1,0 +1,64 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import MatchDetail from '../../../components/admin/MatchDetail';
+import { createSupabaseServerClient } from '../../../lib/supabase/server';
+import type { PartecipanteConGiocatore } from '../../../components/admin/ParticipantsBoard';
+import type { MessaggioConGiocatore } from '../../../components/admin/MessagesInbox';
+import type { PlayerRow } from '../../../lib/supabase/types';
+
+const { id } = Astro.params;
+const supabase = createSupabaseServerClient(Astro.cookies, Astro.request);
+
+const { data: partita } = await supabase.from('matches').select('*').eq('id', id ?? '').maybeSingle();
+
+if (!partita) {
+  return Astro.redirect('/admin/partite');
+}
+
+const [{ data: partecipantiRaw }, { data: messaggiRaw }, { data: giocatoriAttivi }] = await Promise.all([
+  supabase
+    .from('match_participants')
+    .select('*')
+    .eq('match_id', partita.id)
+    .order('creato_at', { ascending: true }),
+  supabase
+    .from('player_messages')
+    .select('*')
+    .eq('match_id', partita.id)
+    .order('creato_at', { ascending: false }),
+  supabase.from('players').select('*').eq('attivo', true).order('cognome', { ascending: true }),
+]);
+
+const idGiocatoriCoinvolti = new Set<string>([
+  ...(partecipantiRaw ?? []).map((p) => p.player_id),
+  ...(messaggiRaw ?? []).map((m) => m.player_id),
+]);
+
+const { data: giocatoriCoinvolti } = idGiocatoriCoinvolti.size
+  ? await supabase.from('players').select('*').in('id', Array.from(idGiocatoriCoinvolti))
+  : { data: [] as PlayerRow[] };
+
+const mappaGiocatori = new Map((giocatoriCoinvolti ?? []).map((g) => [g.id, g]));
+
+const partecipanti: PartecipanteConGiocatore[] = (partecipantiRaw ?? []).flatMap((p) => {
+  const player = mappaGiocatori.get(p.player_id);
+  if (!player) return [];
+  return [{ id: p.id, stato: p.stato, posizione_attesa: p.posizione_attesa, risposto_at: p.risposto_at, player }];
+});
+
+const messaggi: MessaggioConGiocatore[] = (messaggiRaw ?? []).flatMap((m) => {
+  const player = mappaGiocatori.get(m.player_id);
+  if (!player) return [];
+  return [{ ...m, player: { nome: player.nome, cognome: player.cognome } }];
+});
+---
+
+<AdminLayout titolo={partita.circolo}>
+  <MatchDetail
+    partita={partita}
+    giocatoriAttivi={giocatoriAttivi ?? []}
+    partecipanti={partecipanti}
+    messaggi={messaggi}
+    client:load
+  />
+</AdminLayout>

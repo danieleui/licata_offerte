@@ -1,0 +1,9 @@
+---
+import AdminLayout from '../../../layouts/AdminLayout.astro';
+import PlayerForm from '../../../components/admin/PlayerForm';
+---
+
+<AdminLayout titolo="Nuovo giocatore">
+  <h1>Nuovo giocatore</h1>
+  <PlayerForm client:load />
+</AdminLayout>

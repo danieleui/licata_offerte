@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LoginForm from '../../components/admin/LoginForm';
+
+if (Astro.locals.admin) {
+  return Astro.redirect('/admin');
+}
+---
+
+<Layout titolo="Accesso amministratore">
+  <main class="contenitore">
+    <h1>Quarto Giocatore</h1>
+    <p class="testo-muto">Accesso riservato all'organizzatore.</p>
+    <LoginForm client:load />
+  </main>
+</Layout>
